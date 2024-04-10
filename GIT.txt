@@ -1,1 +1,15 @@
 COMANDOS PARA QUE SE PUEDAN VER LOS CAMBIOS EN GITHUB Y JALAR LOS CAMBIOS DE ESTOS
+
+
+1.- SI NO SE PUEDE HACER COMMIT(subir cambios) EN EL VSCODE
+    EN LA TERMINAL DE VSCODE ABRIR BASH Y PONER:
+    git add .
+    git commit -m "NOMBRE DEL COMMIT"
+
+En la siguiente linea se debe de poner despues de haber hecho el commit lo que se hace es que 
+PUSH empuja los cambios al repositorio y este permite ver los commits que se acaban de hacer: 
+
+    git push origin Dev   
+
+2.- JALAR CAMBIOS QUE SUBIERON OTROS: (ACTUALIZAR CAMBIOS)
+    git pull origin Dev
