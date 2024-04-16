@@ -59,7 +59,7 @@
 #imagenDerecha {
     position: absolute;
     /* Posición absoluta */
-    top: 260px;
+    top: 230px;
     /* Ajusta la posición verticalmente según sea necesario */
     right: 180px;
     /* Ajusta la posición hacia la derecha según sea necesario */
@@ -90,7 +90,7 @@
     /* Color de fondo del óvalo */
     position: absolute;
     /* Posicionamiento absoluto para controlar la ubicación */
-    top: 100px;
+    top: -20px;
     /* Ajuste para que esté arriba de la imagen */
     right: 120px;
     /* Ajuste para que esté a la derecha de la imagen */
@@ -101,7 +101,7 @@
 .textoOvalo {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 135px;
+    top: 15px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -122,7 +122,7 @@
 .textoOvalo1 {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 175px;
+    top: 55px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -143,7 +143,7 @@
 .textoOvalo2 {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 230px;
+    top: 110px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -172,7 +172,7 @@
     /* Color de fondo del círculo */
     position: absolute;
     /* Posicionamiento absoluto */
-    top: calc(100px + 110px + 40px);
+    top: calc(100px + 110px + -30px);
     /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
     right: 430px;
     /* Posición horizontal: misma posición que el óvalo */
