@@ -1,0 +1,196 @@
+/*MODULO EL CUERPO: PARTE DE INICIO*/
+
+#miCuadro {
+    width: 500px;
+    /* Ancho del cuadro */
+    height: 400px;
+    /* Altura del cuadro */
+    border-radius: 30px;
+    /* Curvatura de las esquinas */
+    position: absolute;
+    /* Posición absoluta */
+    left: 134px;
+    /* Posición horizontal */
+    top: 160px;
+    /* Posición vertical */
+    background-color: #f0f0f0;
+    /* Color de fondo */
+    display: flex;
+    /* Modelo de caja flexible */
+    flex-direction: column;
+    /* Dirección del contenido */
+    justify-content: flex-end;
+    /* Alineación vertical */
+    align-items: center;
+    /* Alineación horizontal */
+    background-image: url('../Cuerpo/img/modulo_cuerpo.png');
+    /* Ruta de la imagen */
+    background-position: center;
+    /* Centra la imagen */
+    background-size: 80%;
+    /* Ajusta el tamaño de la imagen (más grande que el cuadro) */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+}
+
+.botonCuadro {
+    width: 200px;
+    /* Ancho del botón */
+    height: 40px;
+    /* Altura del botón */
+    border-radius: 20px;
+    /* Curvatura de las esquinas */
+    background-color: #6B8711;
+    /* Color verde */
+    color: white;
+    /* Color del texto */
+    font-size: 16px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    margin-bottom: 30px;
+    /* Margen inferior mayor */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón por encima */
+    border-left: none;
+    /* Elimina el borde izquierdo */
+    border-right: none;
+    /* Elimina el borde derecho */
+    border-top: none;
+    /* Elimina el borde superior */
+}
+
+#imagenDerecha {
+    position: absolute;
+    /* Posición absoluta */
+    top: 260px;
+    /* Ajusta la posición verticalmente según sea necesario */
+    right: 180px;
+    /* Ajusta la posición hacia la derecha según sea necesario */
+    width: 180px;
+    /* Ancho de la imagen */
+    height: auto;
+    /* Altura ajustada automáticamente */
+    z-index: 1;
+    /* Asegura que la imagen esté por encima de otros elementos si es necesario */
+}
+
+.contenedor {
+    position: relative;
+    width: 100%;
+    /* Ancho del Contenedor */
+    height: auto;
+    /* Altura del contendor */
+}
+
+.ovalo {
+    width: 500px;
+    /* Ancho del óvalo */
+    height: 170px;
+    /* Altura del óvalo */
+    border-radius: 50%;
+    /* Esto hace que el borde del óvalo se comporte como un círculo */
+    background-color: #FFFFCC;
+    /* Color de fondo del óvalo */
+    position: absolute;
+    /* Posicionamiento absoluto para controlar la ubicación */
+    top: 100px;
+    /* Ajuste para que esté arriba de la imagen */
+    right: 120px;
+    /* Ajuste para que esté a la derecha de la imagen */
+    z-index: 1;
+    /* Asegura que el óvalo esté por encima de la imagen si se superponen */
+}
+
+.textoOvalo {
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: 145px;
+    /* Posición vertical: ajusta según sea necesario */
+    right: 170px;
+    /* Posición horizontal: ajusta según sea necesario */
+    color: black;
+    /* Color del texto */
+    font-size: 18px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    z-index: 2;
+    /* Asegura que el texto esté por encima del óvalo */
+    width: 400px;
+    /* Ancho del texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.textoOvalo1 {
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: 225px;
+    /* Posición vertical: ajusta según sea necesario */
+    right: 170px;
+    /* Posición horizontal: ajusta según sea necesario */
+    color: black;
+    /* Color del texto */
+    font-size: 18px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    z-index: 2;
+    /* Asegura que el texto esté por encima del óvalo */
+    width: 400px;
+    /* Ancho del texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.circulo {
+    width: 50px;
+    /* Ancho del círculo */
+    height: 50px;
+    /* Altura del círculo */
+    border-radius: 50%;
+    /* Borde redondeado para formar un círculo */
+    background-color: #FFFFCC;
+    /* Color de fondo del círculo */
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: calc(100px + 110px + 40px);
+    /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
+    right: 430px;
+    /* Posición horizontal: misma posición que el óvalo */
+}
+
+.circulo1 {
+    width: 30px;
+    /* Ancho del círculo */
+    height: 30px;
+    /* Altura del círculo */
+    border-radius: 50%;
+    /* Borde redondeado para formar un círculo */
+    background-color: #FFFFCC;
+    /* Color de fondo del círculo */
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: calc(100px + 150px + 40px);
+    /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
+    right: 400px;
+    /* Posición horizontal: misma posición que el óvalo */
+}
+
+.circulo2 {
+    width: 20px;
+    /* Ancho del círculo */
+    height: 20px;
+    /* Altura del círculo */
+    border-radius: 50%;
+    /* Borde redondeado para formar un círculo */
+    background-color: #FFFFCC;
+    /* Color de fondo del círculo */
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: calc(100px + 190px + 24px);
+    /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
+    right: 370px;
+    /* Posición horizontal: misma posición que el óvalo */
+}
