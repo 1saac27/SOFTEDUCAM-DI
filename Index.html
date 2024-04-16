@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./librerias/librerias.html"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>inicio
-    </title>
+    <link rel="stylesheet" href="./css/Indexnav.css">
+    <title>Inicio</title>
 </head>
-<body>
-    <!-- EL OBJECT SIRVE PARA TRAER OTRAS PAGINAS DE HTML DIFERENTES -->
-    <object type="text/html" data="navbar.html"></object>
+<body class="grid-container">
+    <!-- NAVBAR -->
+    <header>
+        <object type="text/html" data="navbar.html" class="navbar-object"></object>
+    </header>
+
     <!-- CUERPO DE LA PAGINA -->
     <main>
-        <object type="text/html" data="hola.html">
             <!-- Aquí se incluirá el contenido del otro archivo HTML -->
-        </object>
+        <!-- <div class="circle pink"></div>        -->
+        <div class="logo">
+            <img src="./assets/LOGO SOFTEDUCAM.png" alt="" id="LOGO">
+        </div>
+        <div class="tex-button">
+            <center><h1>BIENVENIDOS</h1></center>
+        <p>La diversidad y la inclusión son las inspiracion detras 
+                de nuestra nueva aplicación para niños con discapacidad auditiva e intelectual. 
+                Esta es una herramienta educativa unica y emocionante!!</p>
+        <center><a href="#">Comencemos</a></center>
+        </div>
+        
     </main>
-    <aside>
-
-    </aside>
-    <footer>
-
-    </footer>
 </body>
 </html>
