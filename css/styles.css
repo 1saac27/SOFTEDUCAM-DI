@@ -51,12 +51,8 @@ main {
     /* Cambia el cursor al pasar el ratón por encima */
     font-weight: bold;
     /* Hace que el texto del botón sea negrita */
-    border-left: none;
-    /* Elimina el borde izquierdo */
-    border-right: none;
-    /* Elimina el borde derecho */
-    border-top: none;
-    /* Elimina el borde superior */
+    border: none;
+    /* Sin borde */
 }
 
 .boton.izquierda {
