@@ -34,17 +34,17 @@
 }
 
 .botonCuadro {
-    width: 200px;
+    width: 300px;
     /* Ancho del botón */
     height: 40px;
     /* Altura del botón */
-    border-radius: 20px;
+    border-radius: 40px;
     /* Curvatura de las esquinas */
     background-color: #6B8711;
     /* Color verde */
     color: white;
     /* Color del texto */
-    font-size: 16px;
+    font-size: 24px;
     /* Tamaño del texto */
     font-weight: bold;
     /* Estilo del texto en negrita */
@@ -52,12 +52,8 @@
     /* Margen inferior mayor */
     cursor: pointer;
     /* Cambia el cursor al pasar el ratón por encima */
-    border-left: none;
-    /* Elimina el borde izquierdo */
-    border-right: none;
-    /* Elimina el borde derecho */
-    border-top: none;
-    /* Elimina el borde superior */
+    border: none;
+    /* Sin borde */
 }
 
 #imagenDerecha {
@@ -105,7 +101,28 @@
 .textoOvalo {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 145px;
+    top: 135px;
+    /* Posición vertical: ajusta según sea necesario */
+    right: 170px;
+    /* Posición horizontal: ajusta según sea necesario */
+    color: black;
+    /* Color del texto */
+    font-size: 25px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    z-index: 2;
+    /* Asegura que el texto esté por encima del óvalo */
+    width: 400px;
+    /* Ancho del texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.textoOvalo1 {
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: 175px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -123,10 +140,10 @@
     /* Centra el texto horizontalmente */
 }
 
-.textoOvalo1 {
+.textoOvalo2 {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 225px;
+    top: 230px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -193,4 +210,103 @@
     /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
     right: 370px;
     /* Posición horizontal: misma posición que el óvalo */
+}
+
+
+/*MODULO EL CUERPO: NUESTRO CUERPO SEGUNDA PAGINA*/
+
+.texto-centrado {
+    text-align: center;
+    margin-top: 120px;
+    /* Puedes ajustar este valor según la cantidad de espacio que quieras dejar arriba del texto */
+    font-size: 25px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+}
+
+.texto-centrado p {
+    display: inline-block;
+    /* Para que el texto se muestre en línea con el botón */
+    vertical-align: middle;
+    /* Alinea verticalmente el texto con el botón */
+}
+
+.boton-audio {
+    background-color: #007bff;
+    /* Color de fondo azul para el botón */
+    border: none;
+    /* Sin borde */
+    border-radius: 50%;
+    /* Para hacer el botón redondo */
+    width: 50px;
+    /* Tamaño fijo del botón */
+    height: 50px;
+    /* Tamaño fijo del botón */
+    padding: 0;
+    /* Elimina cualquier relleno interno */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    margin-right: 10px;
+    /* Espacio a la derecha del botón */
+}
+
+.boton-audio i {
+    color: white;
+    font-size: 20px;
+    vertical-align: middle;
+    /* Alinea verticalmente el icono */
+}
+
+.imagen-derecha {
+    position: absolute;
+    top: 100px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 150px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 220px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+.imagen-izquierda {
+    position: absolute;
+    top: 100px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 1000px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 220px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+#contenedor-botones {
+    text-align: center;
+}
+
+.boton-adicional {
+    padding: 10px 100px;
+    /* Ajusta el relleno para hacer los botones un poco más largos */
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 100px;
+    /* Agrega un margen superior para desplazar los botones hacia abajo */
+}
+
+.boton1 {
+    background-color: #DE32E1;
+    /* Color de fondo rosa */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    font-size: 25px;
+    /* Tamaño del texto */
+}
+
+.boton2 {
+    background-color: #0E7A9A;
+    /* Color de fondo verde agua fuerte */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    font-size: 25px;
+    /* Tamaño del texto */
 }
