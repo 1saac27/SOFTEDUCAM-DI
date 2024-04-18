@@ -1,5 +1,8 @@
 /*MODULO EL CUERPO: PARTE DE INICIO*/
 
+
+/* Estilo del cuadro */
+
 #miCuadro {
     width: 500px;
     /* Ancho del cuadro */
@@ -24,13 +27,23 @@
     align-items: center;
     /* Alineación horizontal */
     background-image: url('../Cuerpo/img/modulo_cuerpo.png');
-    /* Ruta de la imagen */
+    /* Imagen de fondo */
     background-position: center;
     /* Centra la imagen */
     background-size: 80%;
     /* Ajusta el tamaño de la imagen (más grande que el cuadro) */
     background-repeat: no-repeat;
     /* Evita la repetición de la imagen */
+    transition: transform 0.3s ease;
+    /* Transición suave del efecto */
+}
+
+
+/* Estilo al pasar el mouse sobre el cuadro */
+
+#miCuadro:hover {
+    transform: scale(1.1);
+    /* Escala ligeramente el botón cuando el mouse pasa sobre él */
 }
 
 .botonCuadro {
@@ -59,7 +72,7 @@
 #imagenDerecha {
     position: absolute;
     /* Posición absoluta */
-    top: 230px;
+    top: 200px;
     /* Ajusta la posición verticalmente según sea necesario */
     right: 180px;
     /* Ajusta la posición hacia la derecha según sea necesario */
@@ -90,7 +103,7 @@
     /* Color de fondo del óvalo */
     position: absolute;
     /* Posicionamiento absoluto para controlar la ubicación */
-    top: -20px;
+    top: 40px;
     /* Ajuste para que esté arriba de la imagen */
     right: 120px;
     /* Ajuste para que esté a la derecha de la imagen */
@@ -101,7 +114,7 @@
 .textoOvalo {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 15px;
+    top: 60px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -122,7 +135,7 @@
 .textoOvalo1 {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 55px;
+    top: 105px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -143,7 +156,7 @@
 .textoOvalo2 {
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 110px;
+    top: 165px;
     /* Posición vertical: ajusta según sea necesario */
     right: 170px;
     /* Posición horizontal: ajusta según sea necesario */
@@ -172,7 +185,7 @@
     /* Color de fondo del círculo */
     position: absolute;
     /* Posicionamiento absoluto */
-    top: calc(100px + 110px + -30px);
+    top: calc(100px + 110px + -20px);
     /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
     right: 430px;
     /* Posición horizontal: misma posición que el óvalo */
@@ -189,7 +202,7 @@
     /* Color de fondo del círculo */
     position: absolute;
     /* Posicionamiento absoluto */
-    top: calc(100px + 150px + 40px);
+    top: calc(100px + 150px + -20px);
     /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
     right: 400px;
     /* Posición horizontal: misma posición que el óvalo */
@@ -206,7 +219,7 @@
     /* Color de fondo del círculo */
     position: absolute;
     /* Posicionamiento absoluto */
-    top: calc(100px + 190px + 24px);
+    top: calc(100px + 190px + -40px);
     /* Posición vertical: parte superior del óvalo (100px) + altura del óvalo (170px) + 20px de separación */
     right: 370px;
     /* Posición horizontal: misma posición que el óvalo */
@@ -217,7 +230,7 @@
 
 .texto-centrado {
     text-align: center;
-    margin-top: 120px;
+    margin-top: 30px;
     /* Puedes ajustar este valor según la cantidad de espacio que quieras dejar arriba del texto */
     font-size: 25px;
     /* Tamaño del texto */
@@ -264,7 +277,7 @@
     /* Cambia este valor para ajustar la posición vertical */
     right: 150px;
     /* Cambia este valor para ajustar la posición horizontal */
-    width: 220px;
+    width: 240px;
     /* Cambia este valor para ajustar el ancho de la imagen */
 }
 
@@ -274,7 +287,7 @@
     /* Cambia este valor para ajustar la posición vertical */
     right: 1000px;
     /* Cambia este valor para ajustar la posición horizontal */
-    width: 220px;
+    width: 240px;
     /* Cambia este valor para ajustar el ancho de la imagen */
 }
 
@@ -282,31 +295,241 @@
     text-align: center;
 }
 
+
+/* Estilo base de los botones */
+
 .boton-adicional {
     padding: 10px 100px;
     /* Ajusta el relleno para hacer los botones un poco más largos */
     color: #fff;
+    /* Color del texto */
     border: none;
+    /* Sin borde */
     border-radius: 40px;
+    /* Curvatura de las esquinas */
     cursor: pointer;
+    /* Cambia el cursor al pasar el ratón por encima */
     margin-top: 100px;
     /* Agrega un margen superior para desplazar los botones hacia abajo */
 }
 
+
+/* Estilo del primer botón */
+
 .boton1 {
     background-color: #DE32E1;
-    /* Color de fondo rosa */
+    /* Color de fondo inicial */
     font-weight: bold;
     /* Estilo del texto en negrita */
     font-size: 25px;
     /* Tamaño del texto */
 }
 
+
+/* Estilo del segundo botón */
+
 .boton2 {
     background-color: #0E7A9A;
-    /* Color de fondo verde agua fuerte */
+    /* Color de fondo inicial */
     font-weight: bold;
     /* Estilo del texto en negrita */
     font-size: 25px;
     /* Tamaño del texto */
+}
+
+
+/* Estilo al pasar el mouse sobre los botones */
+
+.boton-adicional:hover {
+    background-color: #fff;
+    /* Cambia el color de fondo a blanco */
+    color: #000;
+    /* Cambia el color del texto a negro */
+}
+
+
+/*MODULO EL CUERPO: CABEZA TERCERA PAGINA*/
+
+.imagen-derecha-cabeza {
+    position: absolute;
+    top: 280px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 250px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 270px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+.imagen-izquierda-cabeza {
+    position: absolute;
+    top: 280px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 790px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 240px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+.texto-arriba-1 {
+    position: absolute;
+    top: 540px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(-220%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.texto-arriba-2 {
+    position: absolute;
+    top: 200px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(120%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.texto-derecho {
+    position: absolute;
+    top: 280px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(300%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.texto-medio {
+    position: absolute;
+    top: 280px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(-50%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.texto-izquierdo {
+    position: absolute;
+    top: 280px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(-400%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.fila {
+    margin-bottom: 50px;
+    /* Espacio entre las filas */
+}
+
+.boton-medio {
+    background-color: #6B8711;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cursor de puntero */
+    width: 150px;
+    /* Ancho fijo para los botones */
+    margin: 5px auto;
+    /* Margen vertical automático y margen horizontal automático para centrar */
+    display: block;
+    /* Para que ocupen todo el ancho disponible */
+    font-weight: bold;
+    /* Estilo del texto en negrita */
+    font-size: 15px;
+    /* Tamaño de la fuente */
+    transition: opacity 0.3s ease;
+    /* Transición suave de la opacidad */
+}
+
+
+/* Estilo al pasar el mouse sobre los botones */
+
+.boton-medio:hover {
+    opacity: 0.6;
+    /* Reduce la opacidad al 80% al pasar el mouse */
+}
+
+
+/*MODULO EL CUERPO: EL CUERPO PAGINA 4*/
+
+.imagen-derecha-C {
+    position: absolute;
+    top: 190px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 580px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 190px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+.imagen-izquierda-C {
+    position: absolute;
+    top: 190px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 1000px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 190px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+.imagen-espalda-C {
+    position: absolute;
+    top: 200px;
+    /* Cambia este valor para ajustar la posición vertical */
+    right: 180px;
+    /* Cambia este valor para ajustar la posición horizontal */
+    width: 190px;
+    /* Cambia este valor para ajustar el ancho de la imagen */
+}
+
+.texto-izquierdo-C {
+    position: absolute;
+    top: 280px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 74%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(-400%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+.texto-derecho-C {
+    position: absolute;
+    top: 365px;
+    /* Ajusta la posición vertical según sea necesario */
+    left: 104%;
+    /* Centra horizontalmente el texto */
+    transform: translateX(-400%);
+    /* Centra horizontalmente el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+}
+
+
+/*MODULO EL CUERPO: ACTIVIDAD CUERPO PAGINA 5*/
+
+.container-actividad-C {
+    text-align: center;
 }

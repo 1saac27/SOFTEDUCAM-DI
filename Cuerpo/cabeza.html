@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="" href="../css/styles.css">
+    <link rel="stylesheet" type="" href="../css/cssCuerpo.css">
+    <link rel="stylesheet" type="" href="../css/Indexnav.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#navbar-container").load("../navbar.html");
+        });
+    </script>
+    <title>El Cuerpo</title>
+</head>
+
+<body>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+
+    <!--Texto de la instruccion y el icono de audio-->
+    <div class="texto-centrado">
+        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+        <p>Aprendiendo las partes de nuestro rostro</p>
+    </div>
+
+    <!--Texto arriba 1 de las imágenes-->
+    <div class="texto-arriba-1">
+        <div class="fila">
+            <button class="boton-medio">Cabello</button>
+        </div>
+    </div>
+    <!--Texto arriba 2 de las imágenes-->
+    <div class="texto-arriba-2">
+        <div class="fila">
+            <button class="boton-medio">Ceja</button>
+        </div>
+    </div>
+
+    <!--Texto en derecho de las imágenes-->
+    <div class="texto-derecho">
+        <div class="fila">
+            <button class="boton-medio">Frente</button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">Nariz</button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">Dientes</button>
+        </div>
+    </div>
+
+    <!--Imagen Derecha-->
+    <img src="img/cabeza_nino.png" alt="Descripción de la imagen" class="imagen-derecha-cabeza">
+
+    <!--Texto en medio de las imágenes-->
+    <div class="texto-medio">
+        <div class="fila">
+            <button class="boton-medio">Pestañas</button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">Mejillas</button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">Cuello</button>
+        </div>
+    </div>
+
+    <!--Imagen Izquierda-->
+    <img src="img/cabeza_nina.png" alt="Descripción de la imagen" class="imagen-izquierda-cabeza">
+
+    <!--Texto izquierda de las imágenes-->
+    <div class="texto-izquierdo">
+        <div class="fila">
+            <button class="boton-medio">Oreja</button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">Ojo</button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">Boca</button>
+        </div>
+    </div>
+
+
+    <!--Botones de Volver y Siguiente-->
+    <div class="botones">
+        <button class="boton" onclick="window.history.back();">Volver</button>
+    </div>
+
+</body>
+
+</html>
