@@ -112,6 +112,10 @@ header {
     justify-content: end;
 }
 /* DISEÑO DE LOS BOTONES */
+.buttons-navbar a {
+    display: block;
+    text-align: center;
+}
 .nav-01 .buttons-navbar a {
     font-family: "Inter", sans-serif;
     font-size: 16px;

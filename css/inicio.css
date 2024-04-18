@@ -11,21 +11,13 @@ html{
     height: 100vh;
     text-align: center;
     margin: 0;
-    
-}
-@keyframes zoom {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1); /* Aumenta al 110% */
-    }
-    100% {
-        transform: scale(1);
-    }
+    overflow: hidden;
 }
 
+
 .body-container h1 {
+    margin-top: 70px;
+    margin-bottom: 30px;
     animation: zoom 6s infinite alternate; /* Animación de zoom constante */
 }
 
@@ -40,7 +32,7 @@ main {
 main {
     background-color: rgb(77, 197, 246);
 }
-.navbar-object {
+.navbar-container {
     width: 100%; /* Asegura que el navbar ocupe todo el ancho disponible */
 }
 .DCPI {

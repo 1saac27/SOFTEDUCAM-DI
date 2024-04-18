@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/inicio.css">
-    <title>Document</title>
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar-container").load("./navbar.html");
+        });
+    </script>
+    <title>Inicio de Temas</title>
 </head>
 <body class="body-container">
-    <object type="text/html" data="./navbar.html" class="navbar-object"></object>
-
-    <h1>!Vamos a Aprender¡</h1>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+    
+        <h1>!Vamos a Aprender¡</h1>
     <main>
         <div class="DCPI">
             <img src="./assets/niña.png" alt="">
