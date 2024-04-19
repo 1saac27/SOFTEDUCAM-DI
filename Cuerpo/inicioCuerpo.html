@@ -8,10 +8,20 @@
     <link rel="stylesheet" type="" href="../css/styles.css">
     <link rel="stylesheet" type="" href="../css/cssCuerpo.css">
     <link rel="stylesheet" type="" href="../css/Indexnav.css">
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#navbar-container").load("../navbar.html");
+        });
+    </script>
     <title>El Cuerpo</title>
 </head>
 
 <body>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+
     <!-- Cuadro -->
     <div id="miCuadro">
         <!-- Botón dentro del cuadro -->
