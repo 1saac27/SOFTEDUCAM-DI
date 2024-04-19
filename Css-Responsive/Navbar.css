@@ -1,0 +1,75 @@
+
+/* PARA RESPONSIVIDAD UTILIZAMOS PORCENTAJES PARA COLOCAR LOS OBJETOS Y CONTENEDORES */
+
+
+.nav-01 {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    height: 90px;
+}
+
+.nav-01 h2 {
+    margin-right: 5%; /* Ajuste relativo al ancho del contenedor */
+}
+
+.nav-01 .buttons-navbar {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+}
+
+.buttons-navbar a {
+    display: block;
+    text-align: center;
+}
+
+.nav-01 .buttons-navbar a {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    margin-left: 2%; /* Ajuste relativo */
+    text-decoration: none;
+    background-color: #0E7A9A;
+    display: inline-block;
+    border-radius: 15px;
+    width: 120px;
+    height: 50px;
+}
+
+.nav-01 .buttons-navbar a h3 {
+    margin-top: 10px;
+}
+
+.nav-01 .buttons-navbar h3 {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-01 h2 {
+    margin-right: 5%; /* Utilizando un porcentaje para el margen derecho */
+}
+
+#SOFTEDUCAM {
+    width: 50%; /* Utilizando un porcentaje para el ancho */
+    margin-right: 5%; /* Utilizando un porcentaje para el margen derecho */
+}
+
+ @media only screen and (max-width: 768px) { /*@media se aplica únicamente cuando el ancho de la pantalla es igual o menor a 768 píxeles */
+    .nav-01 {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto; /* Permite que el navbar crezca según el contenido */
+    }
+
+    .nav-01 h2 {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .buttons-navbar a {
+        margin-left: 0;
+        margin-top: 5px; /* Espacio entre los botones */
+    }
+}

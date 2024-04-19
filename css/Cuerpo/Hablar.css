@@ -1,0 +1,12 @@
+body{
+    background-color: #4dc5f6;
+    font-family: "Inter", sans-serif;
+}
+.navbar-container {
+    width: 100%; /* Asegura que el navbar ocupe todo el ancho disponible */
+}
+body-container{
+    display: flex;
+}
+
+
