@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="" href="../css/styles.css">
-    <link rel="stylesheet" type="" href="../css/cssCuerpo.css">
-    <link rel="stylesheet" type="" href="../css/Indexnav.css">
+    <link rel="stylesheet" type="text/css" href="../Css-Responsive/ccsCuerpo.css">
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function() {
-            $("#navbar-container").load("../navbar.html");
+            $("#navbar-container").load("../NavbarR.html");
         });
     </script>
     <title>El Cuerpo</title>
@@ -30,8 +30,6 @@
 
     <!--Imagen Derecha-->
     <img src="img/nina_cuerpo.png" alt="Descripción de la imagen" class="imagen-derecha">
-    <!--Imagen Izquierda-->
-    <img src="img/nino_cuerpo.png" alt="Descripción de la imagen" class="imagen-izquierda">
 
     <!--Contenedor de los botones del menu de las partes del cuerpo-->
     <div id="contenedor-botones">
@@ -42,6 +40,9 @@
             <button class="boton-adicional boton2" onclick="window.location.href = 'cuerpo.html';">Cuerpo</button>
         </div>
     </div>
+
+    <!--Imagen Izquierda-->
+    <img src="img/nino_cuerpo.png" alt="Descripción de la imagen" class="imagen-izquierda">
 
     <!--Botones de Volver y Siguiente-->
     <div class="botones">

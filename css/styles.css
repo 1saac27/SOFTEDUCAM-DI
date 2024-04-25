@@ -13,57 +13,61 @@ main {
     /* Hace que el área principal ocupe todo el espacio disponible */
 }
 
-
-/*Inicio de Botones de Siguiente y Volver*/
-
 .botones {
-    position: absolute;
-    /* Posición absoluta para que las coordenadas izquierda y arriba sean relativas al contenedor padre */
-    right: 20px;
-    /* Posición horizontal de los botones */
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los botones a la derecha */
+    position: fixed;
     bottom: 20px;
-    /* Posición vertical de los botones (cambiado de top a bottom) */
+    /* Mueve los botones 20px hacia arriba */
+    right: 20px;
+    /* Mueve los botones 20px hacia la izquierda */
+    padding: 10px;
 }
 
 .boton {
-    width: 150px;
-    /* Ancho del botón */
-    height: 40px;
-    /* Altura del botón */
-    border-radius: 40px;
-    /* Curvatura de las esquinas */
+    margin-left: 10px;
+    /* Espacio entre los botones */
     background-color: #2A6BB7;
-    /* Color azul */
-    color: white;
+    /* Color de fondo */
+    color: #fff;
     /* Color del texto */
-    font-size: 16px;
-    /* Tamaño del texto */
-    margin-bottom: 10px;
-    /* Margen inferior para separar los botones */
-    display: inline-block;
-    /* Para que los botones estén en la misma fila */
-    text-align: center;
-    /* Alineación del texto */
-    line-height: 40px;
-    /* Altura de línea verticalmente centrada (cambiado de 72px a 40px) */
-    cursor: pointer;
-    /* Cambia el cursor al pasar el ratón por encima */
-    font-weight: bold;
-    /* Hace que el texto del botón sea negrita */
-    border-left: none;
-    /* Elimina el borde izquierdo */
-    border-right: none;
-    /* Elimina el borde derecho */
-    border-top: none;
-    /* Elimina el borde superior */
     border: none;
-    /* Sin borde */
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 150px;
+    /* Ancho fijo para ambos botones */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Negritas */
 }
+
+
+/* Estilo específico para el botón "Volver" */
 
 .boton.izquierda {
-    color: black;
-    /* Cambia el color del texto del botón de la izquierda a negro */
+    margin-left: 0;
+    /* Elimina el margen izquierdo para el botón "Volver" */
+    background-color: #2A6BB7;
+    /* Cambia el color de fondo */
+    color: #000;
+    /* Color del texto negro */
 }
 
 
-/*Fin de Botones de Siguiente y Volver*/
+/* Estilos adicionales para hacer los botones responsivos */
+
+@media screen and (max-width: 1080px) {
+    .botones {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .boton {
+        margin-top: 10px;
+        /* Agrega espacio entre los botones */
+        opacity: 0.9;
+        /* Hace los botones un poco más opacos */
+    }
+}
