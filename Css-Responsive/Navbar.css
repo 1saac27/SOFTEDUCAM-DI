@@ -25,7 +25,7 @@
 
 .nav-01 .buttons-navbar a {
     font-family: "Inter", sans-serif;
-    font-size: 22px;
+    font-size: 1.375rem; 
     text-align: center;
     cursor: pointer;
     color: white;
@@ -34,8 +34,25 @@
     background-color: #0E7A9A;
     display: inline-block;
     border-radius: 15px;
-    width: 120px;
-    height: 50px;
+    width: auto; /* Ancho automático para adaptarse al contenido */
+    height: auto; /* Altura automática para adaptarse al contenido */
+    max-width: 120px; /* Establece un ancho máximo */
+    padding: 10px 20px; /* Ajusta el espaciado interno */
+    white-space: nowrap; /* Evita que el texto se desborde */
+    box-sizing: border-box; /* Incluye el relleno en el ancho del botón */
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-01 .buttons-navbar {
+        flex-wrap: wrap; /* Envuelve los botones en múltiples líneas */
+        justify-content: center; /* Centra horizontalmente los botones */
+    }
+
+    .nav-01 .buttons-navbar a {
+        font-size: 1rem; /* Reduce el tamaño de la fuente */
+        padding: 8px 16px; /* Ajusta el espaciado interno */
+        margin: 5px; /* Espaciado entre los botones */
+    }
 }
 
 .nav-01 .buttons-navbar a h3 {
