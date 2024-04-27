@@ -34,6 +34,8 @@
 
 .container1 {
     position: relative;
+    padding: 20px;
+    /* Ajusta el relleno para dispositivos móviles */
 }
 
 
@@ -135,24 +137,12 @@
 /* Estilos adicionales para hacerlo responsive */
 
 @media (max-width: 1080px) {
-    .container1 {
-        padding: 100px;
-        /* Agrega espacio alrededor del contenedor cuando es responsivo */
-    }
-    .texto-lateral {
-        position: static;
-        width: auto;
-        left: 0;
-        margin-bottom: 10px;
-        /* Ajusta el espaciado entre los textos */
-        font-size: 25px;
-        /* Ajusta el tamaño de la fuente para el modo responsivo */
-    }
     #miCuadro {
         width: 80%;
+        /* Reducir el ancho del cuadro en dispositivos más pequeños */
         left: 50%;
         transform: translateX(-50%);
-        top: 60%;
+        top: 80%;
         /* Baja más el cuadro cuando se hace responsivo */
     }
     .botonCuadro {
@@ -161,13 +151,25 @@
         transform: translateX(-50%);
         bottom: 20px;
     }
+    .texto-lateral {
+        position: static;
+        /* Cambia la posición a estática para que fluya con el contenido */
+        width: auto;
+        /* Restablecer el ancho */
+        text-align: center;
+        margin: 0 auto;
+        /* Centra el texto */
+        font-size: 20px;
+        /* Reducir el tamaño de la fuente */
+        margin-top: 100px;
+        /* Agrega margen superior para separarlo del contenido superior */
+    }
     .imagen-debajo {
         display: none;
         /* Oculta la imagen en dispositivos móviles */
     }
     #miCuadro:hover {
         background-color: rgba(173, 216, 230, 0.9);
-        /* Cambia el color de fondo del cuadro a uno más opaco al pasar el mouse sobre él */
     }
 }
 
@@ -291,14 +293,14 @@
 .imagen-derecha-cabeza {
     position: absolute;
     top: 280px;
-    right: 250px;
+    right: 285px;
     width: 270px;
 }
 
 .imagen-izquierda-cabeza {
     position: absolute;
     top: 280px;
-    right: 790px;
+    right: 820px;
     width: 240px;
 }
 
@@ -397,49 +399,134 @@
 }
 
 
-/* Estilos para pantalla pequeña */
+/* Media queries para dispositivos de pantalla pequeña */
 
-@media (max-width: 1080px) {
+@media only screen and (max-width: 1080px) {
     .imagen-derecha-cabeza {
         position: static;
-        /* Cambiado a posición estática */
-        width: 40%;
+        width: 35%;
         /* Ajustar el ancho según sea necesario */
-        margin: 50px auto 20px;
+        margin: 0 auto 20px;
         /* Centrar y agregar margen inferior */
+        margin-top: 50px;
     }
     .imagen-izquierda-cabeza {
         position: static;
-        /* Cambiado a posición estática */
         width: 30%;
         /* Ajustar el ancho según sea necesario */
-        margin: 80px auto 20px;
+        margin: 0 auto 20px;
         /* Centrar y agregar margen inferior */
+        margin-top: 50px;
+    }
+    .texto-arriba-2,
+    .texto-derecho,
+    .texto-medio {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+    .texto-arriba-1,
+    .texto-izquierdo {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
     }
     .boton-medio,
     .boton-izquierda,
     .boton-derecha {
-        margin-top: 20px;
-        /* Ajustar margen superior */
-        padding: 10px 10px;
-        /* Ajusta el padding horizontal */
-        display: block;
-        /* Hacer el botón un bloque para centrarlo */
-        width: 100%;
-        /* Ancho del botón */
-        margin-left: auto;
-        /* Margen izquierdo automático */
-        margin-right: auto;
-        /* Margen derecho automático */
+        width: 30%;
+        /* Ajusta el ancho de los botones al 30% del ancho del contenedor padre */
     }
-    .texto-arriba-1,
-    .texto-arriba-2,
-    .texto-derecho,
-    .texto-medio,
-    .texto-izquierdo {
-        text-align: center;
-        /* Centrar el texto */
-        font-size: 22px;
-        /* Tamaño de fuente más pequeño */
+}
+
+
+/*INICIO DE LA PAGINA 4 EL CUERPO*/
+
+.imagen-derecha-C {
+    position: absolute;
+    top: 190px;
+    right: 580px;
+    width: 190px;
+}
+
+.imagen-izquierda-C {
+    position: absolute;
+    top: 190px;
+    right: 1000px;
+    width: 190px;
+}
+
+.imagen-espalda-C {
+    position: absolute;
+    top: 200px;
+    right: 180px;
+    width: 190px;
+}
+
+.botones-C {
+    position: absolute;
+    top: 600px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.texto-izquierdo-C {
+    position: absolute;
+    top: 330px;
+    left: 74%;
+    transform: translateX(-400%);
+    text-align: center;
+}
+
+.texto-derecho-C {
+    position: absolute;
+    top: 365px;
+    left: 104%;
+    transform: translateX(-400%);
+    text-align: center;
+}
+
+@media screen and (max-width: 1080px) {
+    .imagen-derecha-C {
+        display: none;
+    }
+    .imagen-izquierda-C,
+    .imagen-espalda-C {
+        display: block;
+        margin: 0 auto;
+        width: 180px;
+        /* Ajusta el tamaño de la imagen */
+        margin-top: 20px;
+        /* Espacio entre las imágenes */
+        position: static;
+        /* Restaura la posición estática para que las imágenes estén en distintas filas */
+    }
+    .imagen-izquierda-C {
+        top: 400px;
+        /* Posición vertical de la imagen izquierda */
+    }
+    .imagen-espalda-C {
+        top: 570px;
+        /* Posición vertical de la imagen de la espalda */
+    }
+    .botones-C {
+        width: 30%;
+        /* Ajusta el ancho de los botones al 30% del ancho del contenedor padre */
+    }
+    .texto-izquierdo-C {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+    .texto-derecho-C {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 50px;
+        /* Ajusta el espacio superior para moverlo más abajo */
     }
 }
