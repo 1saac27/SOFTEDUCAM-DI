@@ -15,44 +15,12 @@ html, body {
     display: flex;
     height: 100vh;
     margin: 0;
-}/* Estilo para cada elemento */
+}
 .instruction {
     width: 100%; /* Ancho del elemento al 100% del contenedor */
     text-align: center;
     position: relative; /* Establece la posición relativa para que los botones estén relativos a este contenedor */
 }
-
-.audios {
-    position: absolute; /* Establece la posición absoluta para los botones */
-    top: 150px; /* Alinea los botones en la parte superior */
-    right: 100px; /* Alinea los botones a la derecha */
-}
-
-/* Estilo para los botones */
-.audios button {
-    margin-top: 50px;
-    background-color:  rgba(149, 249, 255, 1);
-    height: 80px;
-    width: 80px;
-    border-radius: 15px;
-    display: block; /* Hace que los botones sean bloques */
-}
-
-/* Media query para dispositivos más pequeños */
-@media only screen and (max-width: 768px) {
-    .audios {
-        position: relative; /* Restaura la posición relativa */
-        top: auto; /* Elimina la alineación superior */
-        right: auto; /* Elimina la alineación a la derecha */
-        display: flex; /* Cambia a un layout de fila */
-        justify-content: center; /* Centra horizontalmente los botones */
-    }
-
-    .audios button {
-        margin: 10px; /* Agrega un margen entre los botones */
-    }
-}
-
 .instruction .color-icon {
     margin-top: 20px;
    background-color: rgba(175, 157, 212, 1);
@@ -72,12 +40,34 @@ html, body {
 .instruction .bi2 {
     font-size: 70px;
 }
-/* Estilo para la imagen */
-.img-interactive img {
-    max-width: 100%; /* Establece un ancho máximo para la imagen */
-    height: auto; /* Hace que la altura de la imagen se ajuste automáticamente */
+.box {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    background-color:aliceblue;
+    border-radius: 15px;
 }
 
+.box img {
+    width: 250px;
+    height: 250px;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilos para hacer más grande la caja del checkbox */
+input[type="checkbox"] {
+    width: 30px; /* Ancho personalizado */
+    height: 30px; /* Altura personalizada */
+}
 .botones {
     position: fixed;
     bottom: 0;
@@ -102,4 +92,3 @@ html, body {
 .boton:hover, .sig:hover {
     background-color: rgb(63, 159, 219); /* Color de fondo azul más oscuro al pasar el mouse */
 }
-
