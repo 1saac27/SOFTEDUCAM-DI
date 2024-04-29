@@ -5,7 +5,6 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: rgb(77, 197, 246);
-
 }
 
 /* Contenedor principal */
@@ -15,22 +14,28 @@ html, body {
     display: flex;
     height: 100vh;
     margin: 0;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas */
+    justify-content: space-between; /* Distribuye uniformemente los elementos a lo largo del contenedor */
+    padding: 10px; /* Agrega un poco de espacio alrededor del contenedor */
 }
+
 .instruction {
     width: 100%; /* Ancho del elemento al 100% del contenedor */
     text-align: center;
     position: relative; /* Establece la posición relativa para que los botones estén relativos a este contenedor */
 }
+
 .instruction .color-icon {
     margin-top: 20px;
-   background-color: rgba(175, 157, 212, 1);
-   height: 50px;
-   width: 50px;
-   border-radius: 15px;
+    background-color: rgba(175, 157, 212, 1);
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
 }
-.instruction .color-icon .bi{
+
+.instruction .color-icon .bi {
     height: 100px;
-    width: 100px;;
+    width: 100px;
 }
 
 .instruction .bi-volume-up {
@@ -40,13 +45,14 @@ html, body {
 .instruction .bi2 {
     font-size: 70px;
 }
+
 .box {
     font-size: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    background-color:aliceblue;
+    background-color: aliceblue;
     border-radius: 15px;
 }
 
@@ -68,6 +74,14 @@ input[type="checkbox"] {
     width: 30px; /* Ancho personalizado */
     height: 30px; /* Altura personalizada */
 }
+
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .checkbox-container {
+        flex-direction: column; /* Cambia la dirección a columna en dispositivos móviles */
+    }
+}
+
 .botones {
     position: fixed;
     bottom: 0;
@@ -87,7 +101,6 @@ input[type="checkbox"] {
     transition: background-color 0.3s; /* Transición suave para el color de fondo */
     border-radius: 25px;
 }
-
 
 .boton:hover, .sig:hover {
     background-color: rgb(63, 159, 219); /* Color de fondo azul más oscuro al pasar el mouse */

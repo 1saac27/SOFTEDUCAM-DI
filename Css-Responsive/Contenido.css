@@ -1,14 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(77, 197, 246);
-
-}
-
-/* Contenedor principal */
+/* Estilos generales para pantallas grandes */
 .grid-container {
     font-family: "Inter", sans-serif;
     background-color: rgb(77, 197, 246);
@@ -18,7 +8,6 @@ html, body {
     padding: 10px; /* Agrega un poco de espacio alrededor del contenedor */
 }
 
-
 .cont {
     width: calc(20% - 20px); /* Calcula el ancho para 5 elementos por fila */
     margin: 15px;
@@ -26,11 +15,19 @@ html, body {
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto del elemento */
 }
 
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .cont {
+        width: calc(50% - 20px); /* Calcula el ancho para 2 elementos por fila */
+    }
+}
+
 .cont img {
     max-width: 100%; /* Asegura que la imagen no se extienda más allá de su contenedor */
     height: auto;
     border-radius: 15px;
 }
+
 .cont a {
     font-size: 23px;
     display: inline-block; /* Convierte las etiquetas 'a' en elementos de bloque */
@@ -44,28 +41,4 @@ html, body {
 
 .cont a:hover {
     background-color: lightgray; /* Cambia el color de fondo al pasar el mouse */
-}
-.botones {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 10px; /* Ajusta el margen para mayor espacio */
-    display: flex;
-    justify-content: flex-end; /* Alinea los botones a la derecha */
-}
-
-.boton, .sig {
-    background-color: rgba(42, 107, 183, 1); /* Color de fondo azul */
-    border: none; /* Elimina los bordes */
-    padding: 10px 20px; /* Espaciado interno */
-    margin-left: 10px; /* Espaciado entre los botones */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
-    border-radius: 25px;
-}
-
-
-.boton:hover, .sig:hover {
-    background-color: rgb(63, 159, 219); /* Color de fondo azul más oscuro al pasar el mouse */
 }
