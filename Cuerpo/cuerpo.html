@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="" href="../css/styles.css">
-    <link rel="stylesheet" type="" href="../css/cssCuerpo.css">
-    <link rel="stylesheet" type="" href="../css/Indexnav.css">
+    <link rel="stylesheet" type="text/css" href="../Css-Responsive/ccsCuerpo.css">
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function() {
-            $("#navbar-container").load("../navbar.html");
+            $("#navbar-container").load("../NavbarR.html");
         });
     </script>
     <title>El Cuerpo</title>
@@ -23,41 +23,54 @@
     <!-- DIV DE LLAMADA DEL NAVBAR -->
     <div id="navbar-container"></div>
 
-    <!--Imagen Derecha-->
-    <img src="img/nina_cuerpo.png" alt="Descripción de la imagen" class="imagen-derecha-C">
-    <!--Imagen Izquierda-->
-    <img src="img/nino_cuerpo.png" alt="Descripción de la imagen" class="imagen-izquierda-C">
-    <!--Imagen Niño Espalda-->
-    <img src="img/espalda_nino.png" alt="Descripción de la imagen" class="imagen-espalda-C">
-
-    <!--Texto izquierda de las imágenes del cuerpo-->
-    <div class="texto-izquierdo-C">
-        <div class="fila">
-            <button class="boton-medio">Brazos</button>
-        </div>
-        <div class="fila">
-            <button class="boton-medio">Tronco</button>
-        </div>
-        <div class="fila">
-            <button class="boton-medio">Piernas</button>
-        </div>
-    </div>
-
-    <!--Texto  imágenes-->
-    <div class="texto-derecho-C">
-        <div class="fila">
-            <button class="boton-medio">Espalda</button>
-        </div>
-    </div>
-
     <!--Texto de la instruccion y el icono de audio-->
     <div class="texto-centrado">
         <button class="boton-audio"><i class="material-icons">volume_up</i></button>
         <p>Aprendiendo las Partes del Cuerpo</p>
     </div>
 
+    <!--Imagen Derecha-->
+    <img src="img/nina_cuerpo.png" alt="Descripción de la imagen" class="imagen-derecha-C">
 
 
+
+    <!--Texto izquierda de las imágenes del cuerpo-->
+    <div class="texto-izquierdo-C">
+        <div class="fila">
+            <button class="boton-medio">
+                <i class="material-icons" style="vertical-align: middle;">volume_up</i>
+                Brazos
+            </button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">
+                <i class="material-icons" style="vertical-align: middle;">volume_up</i>
+                Tronco
+            </button>
+        </div>
+        <div class="fila">
+            <button class="boton-medio">
+                <i class="material-icons" style="vertical-align: middle;">volume_up</i>
+                Piernas
+            </button>
+        </div>
+    </div>
+
+    <!--Imagen Izquierda-->
+    <img src="img/nino_cuerpo.png" alt="Descripción de la imagen" class="imagen-izquierda-C">
+
+    <!--Texto  imágenes-->
+    <div class="texto-derecho-C">
+        <div class="fila">
+            <button class="boton-medio">
+                <i class="material-icons" style="vertical-align: middle;">volume_up</i>
+                Espalda
+            </button>
+        </div>
+    </div>
+
+    <!--Imagen Niño Espalda-->
+    <img src="img/espalda_nino.png" alt="Descripción de la imagen" class="imagen-espalda-C">
 
     <!--Botones de Volver y Siguiente-->
     <div class="botones">
