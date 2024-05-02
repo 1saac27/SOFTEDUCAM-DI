@@ -23,26 +23,36 @@ html, body {
     text-align: center;
     /* border: 2px solid green; */
 }
-
-.instruction .color-icon {
+/*BOTON CON ICONO DE AUDIO*/
+.boton-audio {
     margin-top: 20px;
    background-color: rgba(175, 157, 212, 1);
    height: 50px;
    width: 50px;
    border-radius: 15px;
 }
-.instruction .color-icon .bi{
-    height: 100px;
-    width: 100px;;
-}
-
-.instruction .bi-volume-up {
+.boton-audio i {
+    color: rgb(0, 0, 0);
     font-size: 30px;
+    vertical-align: middle;
+    /* Alinea verticalmente el icono */
+}
+/*BOTON CON ICONO DE AUDIO AZUL*/
+.boton-audio2 {
+    margin-top: 20px;
+   background-color: rgb(129, 219, 255);
+   height: 60px;
+   width: 60px;
+   border-radius: 15px;
+}
+.boton-audio2 i {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    vertical-align: middle;
+    /* Alinea verticalmente el icono */
 }
 
-.instruction .bi2 {
-    font-size: 70px;
-}
+
 .hablar {
     margin-top: 30px;
     display: flex;
@@ -94,7 +104,9 @@ html, body {
     display: flex;
     justify-content: flex-end; /* Alinea los botones a la derecha */
 }
-
+.botones a{
+    text-decoration: none;
+}
 .boton, .sig {
     background-color: rgba(42, 107, 183, 1); /* Color de fondo azul */
     border: none; /* Elimina los bordes */

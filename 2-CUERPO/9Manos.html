@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
+    <link rel="stylesheet" href="../css/Cuerpo/Hablar.css">
+    <!-- LINKS DE BOOSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#navbar-container").load("../NavbarR.html");
+        });
+    </script>
+    <title>Hablar Actividad MANOS</title>
+</head>
+
+<body class="grid-container">
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+
+    <main>
+        <div class="body-container">
+            <div class="instruction">
+                <p><button class="boton-audio"><i class="material-icons">volume_up</i></button>
+                <h2>Escucha y repite la palabra!</h2>
+                </p>
+
+
+                <div class="hablar">
+                    <button class="boton-audio2"><i class="material-icons">volume_up</i></button>
+
+                    <div class="image">
+                        <img src="../assets/img/el cuerpo(manos, pies, hombro)/Manos2.png" alt="" class="img">
+                        <h2>MANOS</h2>
+                    </div>
+                </div>
+                <button class="microfono">
+                    <h2>Hablar</h2>
+                </button>
+                <div class="botones">
+                    <button class="boton" onclick="window.history.back();">Volver</button>
+                    <a href="./10Pie.html" class="sig">
+                        Siguiente
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

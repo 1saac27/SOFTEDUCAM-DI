@@ -1,31 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Resetear estilos predeterminados */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     background-color: rgb(77, 197, 246);
+    font-family: "Inter", sans-serif;
 }
 
 /* Contenedor principal */
 .grid-container {
-    font-family: "Inter", sans-serif;
-    background-color: rgb(77, 197, 246);
     display: flex;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas */
-    justify-content: space-between; /* Distribuye uniformemente los elementos a lo largo del contenedor */
-    padding: 10px; /* Agrega un poco de espacio alrededor del contenedor */
+    justify-content: space-between;
+    padding: 10px;
 }
 
+/* Contenedor de instrucciones */
 .instruction {
-    width: 100%; /* Ancho del elemento al 100% del contenedor */
     text-align: center;
-    position: relative; /* Establece la posición relativa para que los botones estén relativos a este contenedor */
+    position: relative;
 }
 
-.instruction .color-icon {
+/* Botón de audio */
+.boton-audio {
     margin-top: 20px;
     background-color: rgba(175, 157, 212, 1);
     height: 50px;
@@ -33,19 +34,24 @@ html, body {
     border-radius: 15px;
 }
 
-.instruction .color-icon .bi {
-    height: 100px;
-    width: 100px;
-}
-
-.instruction .bi-volume-up {
+.boton-audio i {
+    color: rgb(0, 0, 0);
     font-size: 30px;
+    vertical-align: middle;
 }
 
-.instruction .bi2 {
-    font-size: 70px;
+/* Áreas de caída para arrastrar */
+.parte-cuerpo {
+    width: calc(25% - 20px);
+    height: 0;
+    padding-top: calc(25% - 20px); /* Se establece el padding-top en función del ancho para hacerlo cuadrado */
+    margin: 10px;
+    border: 2px dashed #ccc;
+    display: inline-block;
+    flex: 1; /* Permite que los div ocupen todo el espacio disponible */
 }
 
+/* Estilos para las cajas de opciones */
 .box {
     font-size: 25px;
     display: flex;
@@ -61,47 +67,51 @@ html, body {
     height: 250px;
 }
 
+/* Estilos para el contenedor de imágenes */
 .checkbox-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en varias filas */
+    justify-content: center; /* Centra las imágenes horizontalmente */
     margin-top: 20px;
 }
 
-/* Estilos para hacer más grande la caja del checkbox */
-input[type="checkbox"] {
-    width: 30px; /* Ancho personalizado */
-    height: 30px; /* Altura personalizada */
+/* Estilos para las imágenes */
+.checkbox-container img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+    margin: 5px; /* Añade un pequeño margen entre las imágenes */
+    flex: 1; /* Permite que las imágenes ocupen todo el espacio disponible */
 }
 
-/* Estilos específicos para dispositivos móviles */
-@media only screen and (max-width: 768px) {
-    .checkbox-container {
-        flex-direction: column; /* Cambia la dirección a columna en dispositivos móviles */
-    }
-}
-
+/* Estilos para los botones */
 .botones {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 10px; /* Ajusta el margen para mayor espacio */
+    margin: 10px;
     display: flex;
-    justify-content: flex-end; /* Alinea los botones a la derecha */
+    justify-content: flex-end;
 }
 
 .boton, .sig {
-    background-color: rgba(42, 107, 183, 1); /* Color de fondo azul */
-    border: none; /* Elimina los bordes */
-    padding: 10px 20px; /* Espaciado interno */
-    margin-left: 10px; /* Espaciado entre los botones */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    background-color: rgba(42, 107, 183, 1);
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
     border-radius: 25px;
 }
 
 .boton:hover, .sig:hover {
-    background-color: rgb(63, 159, 219); /* Color de fondo azul más oscuro al pasar el mouse */
+    background-color: rgb(63, 159, 219);
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .parte-cuerpo, .checkbox-container {
+        width: calc(50% - 20px); /* Se cambia el ancho al 50% en dispositivos móviles */
+        padding-top: calc(50% - 20px); /* Se ajusta el padding-top para mantener la proporción cuadrada */
+    }
 }
