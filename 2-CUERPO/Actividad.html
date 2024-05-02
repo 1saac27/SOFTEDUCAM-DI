@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../css/Cuerpo/Actividad.css">
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar-container").load("../NavbarR.html");
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+     <!-- DIV DE LLAMADA DEL NAVBAR -->
+     <div id="navbar-container"></div>
+     <div class="grid-container">
+        <div class="instruction">
+            <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+            <h2>Arrastra la imagen a su palabra</h2>
+        </div>
+        <div class="wrapper">
+            <div class="casillas">
+                <div class="cuadro"><p>Nariz</p></div>
+                <div class="cuadro"><p>Ojos</p></div>
+                <div class="cuadro"><p>Boca</p></div>
+                <div class="cuadro"><p>Oido</p></div>
+            </div>
+            <div class="imagenes-cas">
+                <div class="img1"><img src="../assets/CUERPO/los sentidos/boca.png" alt=""></div>
+                <div class="img1"><img src="../assets/CUERPO/los sentidos/nose.png" alt=""></div>
+                <div class="img1"><img src="../assets/CUERPO/los sentidos/oido.png" alt=""></div>
+                <div class="img1"><img src="../assets/CUERPO/los sentidos/ojitos_mentirosos.png" alt=""></div>
+            </div>
+        </div>
+        <div class="botones">
+            <button class="boton" onclick="window.history.back();">Volver</button>
+            <a href="./Check-Act.html" class="sig">
+                Siguiente
+            </a>
+        </div> 
+    </div>
+    
+</body>
+</html>
