@@ -1,0 +1,136 @@
+.boton-audio3 {
+    background-color: #946EE5;
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    margin-right: 15px;
+    border: none;
+}
+
+.boton-audio3 i {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 40px;
+    /* Ajusta el margen superior */
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 30px;
+    /* Ajusta el margen superior */
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+    /* Espacio entre filas */
+}
+
+.column {
+    flex: 1;
+    margin: 0 30px;
+    /* Espacio entre columnas */
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+}
+
+
+/* Estilos para el botón de audio */
+
+.audio-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Espacio para el audio debajo de cada imagen */
+
+.audio-space {
+    width: 50px;
+    /* Ancho del espacio de audio */
+    height: 40px;
+    /* Altura del espacio de audio */
+    border: 3px solid rgb(255, 255, 255);
+    /* Borde sólido de 1px en negro */
+    margin-top: -5px;
+    /* Margen superior */
+    margin-bottom: 5px;
+    /* Margen inferior */
+    display: inline-block;
+    /* Permite alinear elementos horizontalmente */
+    background-color: #AF9DD4;
+    /* Color de fondo para la imagen (opcional) */
+    border-radius: 15px;
+}
+
+.small-image {
+    width: 165px;
+    /* Ajusta el ancho según tus necesidades */
+    height: auto;
+    /* Mantén la proporción de aspecto */
+    border-radius: 20px;
+    background-color: white;
+    /* Color de fondo para la imagen (opcional) */
+}
+
+.boton-enviar {
+    text-align: center;
+    /* Centra horizontalmente el botón */
+    margin-top: 40px;
+    /* Añade un espacio superior */
+    margin-bottom: 50px;
+    /* Añade un espacio inferior */
+}
+
+.boton-rosa {
+    background-color: #F01863;
+    /* Color rosa */
+    color: rgb(255, 255, 255);
+    /* Color del texto */
+    padding: 10px 20px;
+    /* Ajusta el espacio alrededor del texto */
+    border: none;
+    /* Elimina el borde */
+    border-radius: 15px;
+    /* Añade esquinas redondeadas */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    font-size: 20px;
+    /* Tamaño del texto */
+}
+
+
+/* Estilos para pantallas pequeñas */
+
+@media (max-width: 1080px) {
+    .column {
+        margin: 0 5px;
+        /* Espacio entre columnas */
+    }
+    .small-image {
+        width: 100%;
+        /* Ancho máximo del 100% para que la imagen se ajuste al contenedor */
+        height: auto;
+        /* Altura automática para mantener la proporción */
+        border-radius: 10px;
+        /* Añade bordes redondeados */
+    }
+    .audio-space {
+        width: 70%;
+        /* Ancho máximo del 70% para que el espacio de audio se ajuste al contenedor */
+    }
+}
