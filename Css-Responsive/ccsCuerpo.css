@@ -73,7 +73,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    bottom: 10px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -136,20 +136,20 @@
 
 /* Estilos adicionales para hacerlo responsive */
 
-@media (max-width: 1080px) {
+@media (max-width: 767px) {
     #miCuadro {
-        width: 80%;
+        width: 70%;
         /* Reducir el ancho del cuadro en dispositivos más pequeños */
         left: 50%;
         transform: translateX(-50%);
-        top: 80%;
+        top: 70%;
         /* Baja más el cuadro cuando se hace responsivo */
     }
     .botonCuadro {
         width: 80%;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 20px;
+        bottom: 300px;
     }
     .texto-lateral {
         position: static;

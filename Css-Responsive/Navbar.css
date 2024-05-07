@@ -37,7 +37,7 @@
     border-radius: 15px;
     width: auto; /* Ancho automático para adaptarse al contenido */
     height: auto; /* Altura automática para adaptarse al contenido */
-    max-width: 120px; /* Establece un ancho máximo */
+    max-width: 130px; /* Establece un ancho máximo */
     padding: 10px 20px; /* Ajusta el espaciado interno */
     white-space: nowrap; /* Evita que el texto se desborde */
     box-sizing: border-box; /* Incluye el relleno en el ancho del botón */

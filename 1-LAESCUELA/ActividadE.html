@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completar palabra</title>
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
+    <link rel="stylesheet" href="../css/ESCUELA/ActividadE.css">
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#navbar-container").load("../NavbarR.html");
+        });
+    </script>
+</head>
+<body>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+    <div class="contenedor">
+        <form class="formulario" action="#">
+            <img src="../assets/escuela/el salon de clases.jpeg" alt="Imagen">
+            <label for="palabra">Escribe la palabra:</label>
+            <input type="text" id="palabra" name="palabra" placeholder="Ingresa la palabra">
+            <button type="submit" class="Btn">Enviar</button>
+        </form>
+        <div class="botones">
+            <button class="boton" onclick="window.history.back();">Volver</button>
+            <a href="./ActividadE.html" class="sig">
+                Siguiente
+            </a>
+        </div>
+    </div>
+</body>
+</html>

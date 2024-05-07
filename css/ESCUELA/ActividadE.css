@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(77, 197, 246);
+}
+
+.contenedor {
+    font-family: 'Inter', sans-serif;
+    color: rgb(55, 82, 103);
+    background-color: rgb(77, 197, 246);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: 0;
+}
+
+
+.formulario {
+    margin-top: 30px;
+    background-color: rgba(255, 240, 240, 1);
+    border-radius: 25px;
+    height: 450px;
+    width: 500px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario img {
+    border: 3px solid #de0768;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+@media (max-width: 767px) {
+    .formulario {
+        width: 90%; /* Hace el formulario más angosto en dispositivos móviles */
+        height: auto; /* Permite que la altura sea automática para adaptarse al contenido */
+        font-size: 20px; /* Reduce el tamaño de fuente en dispositivos móviles */
+    }
+    input {
+        width: 80%; /* Ajusta el ancho del input en dispositivos móviles */
+    }
+    .formulario img {
+        border: 3px solid #de0768;
+        width: 200px;
+        height:auto;
+        border-radius: 25px;
+    }
+}
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    width: 200px;
+    height: 40px;
+}
+
+button {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.botones {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px; /* Ajusta el margen para mayor espacio */
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+}
+
+.boton, .sig {
+    text-decoration: none;
+    background-color: rgba(42, 107, 183, 1); /* Color de fondo azul */
+    border: none; /* Elimina los bordes */
+    padding: 10px 20px; /* Espaciado interno */
+    margin-left: 10px; /* Espaciado entre los botones */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    border-radius: 25px;
+}
+
+.boton:hover, .sig:hover {
+    background-color: rgb(63, 159, 219); /* Color de fondo azul más oscuro al pasar el mouse */
+}

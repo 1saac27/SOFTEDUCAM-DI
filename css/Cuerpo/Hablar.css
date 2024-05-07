@@ -5,10 +5,8 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: rgb(77, 197, 246);
-
 }
 
-/* Contenedor principal */
 .body-container {
     font-family: "Inter", sans-serif;
     background-color: rgb(77, 197, 246);
@@ -17,50 +15,49 @@ html, body {
     margin: 0;
 }
 
-/* Estilo para cada elemento */
 .instruction {
-    width: 100%; /* Ancho del elemento al 100% del contenedor */
+    width: 100%;
     text-align: center;
-    /* border: 2px solid green; */
 }
-/*BOTON CON ICONO DE AUDIO*/
+
 .boton-audio {
+    border: none;
     margin-top: 20px;
-   background-color: rgba(175, 157, 212, 1);
-   height: 50px;
-   width: 50px;
-   border-radius: 15px;
+    background-color: rgba(175, 157, 212, 1);
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
 }
+
 .boton-audio i {
-    color: rgb(0, 0, 0);
     font-size: 30px;
     vertical-align: middle;
-    /* Alinea verticalmente el icono */
 }
-/*BOTON CON ICONO DE AUDIO AZUL*/
+
 .boton-audio2 {
+    border: none;
+    margin-right: 20px;
     margin-top: 20px;
-   background-color: rgb(129, 219, 255);
-   height: 60px;
-   width: 60px;
-   border-radius: 15px;
+    background-color: rgb(129, 219, 255);
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
 }
+
 .boton-audio2 i {
     color: rgb(0, 0, 0);
     font-size: 40px;
     vertical-align: middle;
-    /* Alinea verticalmente el icono */
 }
-
 
 .hablar {
     margin-top: 30px;
     display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
-   /* align-items: center;  Centra verticalmente el contenido */    width: 100%; /* Asegura que el contenedor padre tenga anchura definida */
+    justify-content: center;
+    width: 100%;
 }
 
-.hablar .icon{
+.hablar .icon {
     margin-right: 10px;
     background-color: rgba(149, 249, 255, 1);
     height: 100px;
@@ -71,28 +68,30 @@ html, body {
 .hablar .image {
     color: rgba(15, 114, 146, 1);
     background-color: rgba(255, 240, 240, 1);
-    width: 100%; /* Cambiado a ancho relativo */
-    height: 100%; /* Cambiado a altura relativa */
-    max-width: 300px; /* Limita el ancho máximo */
-    max-height: 300px; /* Limita la altura máxima */
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
     border-radius: 15px;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+    overflow: hidden;
 }
 
 .img {
     width: 250px;
-    height:250px;
+    height: 250px;
     object-fit: contain;
 }
 
 .instruction .microfono {
+    border: none;
+    margin-left: 70px;
     background-color: rgba(255, 240, 240, 1);
     height: 80px;
     width: 250px;
-    border-radius: 15px; /* Agrega bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Añade una sombra gris */
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
 }
 
@@ -100,26 +99,28 @@ html, body {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 10px; /* Ajusta el margen para mayor espacio */
+    margin: 10px;
     display: flex;
-    justify-content: flex-end; /* Alinea los botones a la derecha */
-}
-.botones a{
-    text-decoration: none;
-}
-.boton, .sig {
-    background-color: rgba(42, 107, 183, 1); /* Color de fondo azul */
-    border: none; /* Elimina los bordes */
-    padding: 10px 20px; /* Espaciado interno */
-    margin-left: 10px; /* Espaciado entre los botones */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
-    border-radius: 25px;
+    justify-content: flex-end;
 }
 
+.botones a {
+    text-decoration: none;
+    color: white; /* Añade este estilo para asegurar que el color del texto sea blanco */
+}
+
+.boton, .sig {
+    background-color: rgba(42, 107, 183, 1);
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 25px;
+    outline: none; /* Elimina el borde de enfoque */
+}
 
 .boton:hover, .sig:hover {
-    background-color: rgb(63, 159, 219); /* Color de fondo azul más oscuro al pasar el mouse */
+    background-color: rgb(63, 159, 219);
 }
-

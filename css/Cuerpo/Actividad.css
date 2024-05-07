@@ -20,6 +20,7 @@ html, body {
 
 /* Estilo para cada elemento */
 .instruction {
+    color: rgb(0, 66, 146);
     width: 100%; /* Ancho del elemento al 100% del contenedor */
     text-align: center;
     position: relative; /* Establece la posición relativa para que los botones estén relativos a este contenedor */
@@ -34,14 +35,17 @@ html, body {
 }
 
 .casillas {
+    color: rgb(60, 76, 116);
+    font-size: 30px;
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan */
     justify-content: center; /* Centra los elementos horizontalmente */
 }
 
 .casillas .cuadro {
+    border-radius: 25px;
     flex: 1;
-    border: 2px solid black; /* Agrega bordes negros */
+    border: 2px solid rgb(107, 56, 56); /* Agrega bordes negros */
     margin: 5px; /* Espacio entre los cuadros */
     text-align: center; /* Centra el texto */
     width: 200px; /* Anchura deseada */
@@ -53,8 +57,9 @@ html, body {
     justify-content: center; /* Centra los elementos horizontalmente */
 }
 .imagenes-cas .img1 {
+    border-radius: 25px;
     flex: 1;
-    border: 2px solid black; /* Agrega bordes negros */
+    border: 2px solid rgb(107, 56, 56); /* Agrega bordes negros */
     margin: 5px; /* Espacio entre los cuadros */
     text-align: center; /* Centra el texto */
     width: 200px; /* Anchura deseada */
