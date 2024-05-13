@@ -55,7 +55,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background-image: url('../assets/3-CUIDOCUERPO/modulo_cuido_cuerpo.jpg');
+    background-image: url('../assets/4-ALIMENTACION/alimentacion2.jpeg');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -116,7 +116,7 @@
     /* Ancho de la imagen */
     height: 300px;
     /* Alto de la imagen */
-    background-image: url('../assets/nina_modulo.png');
+    background-image: url('../assets/nino_modulo.png');
     /* Ruta de la imagen */
     background-size: contain;
     /* Ajusta el tamaño de la imagen para que se ajuste completamente dentro del contenedor sin cortarla */

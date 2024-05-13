@@ -1,0 +1,128 @@
+.boton-audio3 {
+    background-color: #946EE5;
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    margin-right: 15px;
+    border: none;
+}
+
+.boton-audio3 i {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.container {
+    display: flex;
+    margin-top: 110px;
+    /* Añade un espacio superior */
+    flex-direction: column;
+    /* Alinear las filas verticalmente */
+    align-items: center;
+    /* Centrar horizontalmente los elementos */
+}
+
+.row {
+    flex: 1;
+    display: flex;
+    margin-bottom: 40px;
+    /* Espacio entre filas */
+}
+
+.column {
+    flex: 1;
+    margin: 0 30px;
+    /* Espacio entre columnas */
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+}
+
+.image {
+    width: 200px;
+    /* Establecer el ancho deseado */
+    height: 200px;
+    /* Mantener la proporción de aspecto */
+}
+
+.image img {
+    width: 240px;
+    /* Establecer el ancho deseado */
+    height: 240px;
+    /* Mantener la proporción de aspecto */
+}
+
+.text p {
+    font-size: 20px;
+    /* Tamaño de letra más grande */
+    font-weight: bold;
+    /* Texto en negrita */
+    display: inline-block;
+    /* Convertir el párrafo en un bloque en línea */
+    padding: 5px 20px;
+    /* Ajustar el relleno para adaptarse al tamaño de la palabra */
+    background-color: lightgray;
+    /* Color de fondo */
+    border-radius: 20px;
+}
+
+.boton-enviar {
+    text-align: center;
+    /* Centra horizontalmente el botón */
+    margin-top: 10px;
+    /* Añade un espacio superior */
+    margin-bottom: 70px;
+    /* Añade un espacio inferior */
+}
+
+.boton-rosa {
+    background-color: #F01863;
+    /* Color rosa */
+    color: rgb(255, 255, 255);
+    /* Color del texto */
+    padding: 10px 20px;
+    /* Ajusta el espacio alrededor del texto */
+    border: none;
+    /* Elimina el borde */
+    border-radius: 15px;
+    /* Añade esquinas redondeadas */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    font-size: 20px;
+    /* Tamaño del texto */
+}
+
+
+/* Media query para 1080px */
+
+@media (max-width: 1080px) {
+    .container {
+        margin-top: 50px;
+        align-items: center;
+        /* Centrar horizontalmente los elementos */
+    }
+    .row {
+        flex-wrap: wrap;
+        /* Permitir que las columnas se envuelvan en una segunda fila */
+    }
+    .column {
+        flex: 1 20%;
+        /* Establecer el ancho de las columnas en un 30% */
+    }
+    .image {
+        width: 100px;
+        /* Establecer el ancho deseado */
+        height: 100px;
+        /* Mantener la proporción de aspecto */
+        margin-top: 20px;
+        /* Añade un espacio superior */
+    }
+    .image img {
+        width: 100px;
+        /* Establecer el ancho deseado */
+        height: 100px;
+        /* Mantener la proporción de aspecto */
+        margin-top: 10px;
+        /* Añade un espacio superior */
+    }
+}
