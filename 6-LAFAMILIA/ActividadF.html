@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Familiar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/6-FAMILIA/ActividadF.css">
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script> <!-- Librería ConfettiJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#navbar-container").load("../NavbarR.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+    <h2>
+        <p><button class="boton-audio"><i class="material-icons">volume_up</i></button>
+            Escucha y selecciona la palabra!
+    </h2>
+    </p>
+    <div class="container">
+        <button class="boton-audio2"><i class="material-icons">volume_up</i></button>
+        <img id="imagen" alt="imagen">
+        <button id="boton1" class="boton"></button>
+        <button id="boton2" class="boton"></button>
+        <button id="boton3" class="boton"></button>
+    </div>
+    <br>
+    <br>
+    <p id="resultado"></p>
+    <br>
+    <br>
+    <div class="botones">
+        <canvas id="confetti-canvas"></canvas> <!-- Aquí colocamos la etiqueta canvas para el confeti -->
+        <button id="siguienteBtn" onclick="siguientePregunta()" class="sig">Siguiente</button>
+
+        <a href="../1MAIN/Contenido.html" class="sig">
+            Temas
+        </a>
+    </div> <!-- Cierra el div .botones -->
+    <script src="../JS/familia.js"></script> <!-- Mueve este script aquí -->
+</body>
+
+</html>

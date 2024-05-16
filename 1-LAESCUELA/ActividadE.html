@@ -6,6 +6,7 @@
     <title>Completar palabra</title>
     <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
     <link rel="stylesheet" href="../css/ESCUELA/ActividadE.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -19,7 +20,7 @@
     <div id="navbar-container"></div>
     <div class="contenedor">
         <form class="formulario" action="#">
-            <img src="../assets/escuela/el salon de clases.jpeg" alt="Imagen">
+            <img src="" alt="Imagen" id="imagen-actividad"> <!-- Agregamos un id para la imagen -->
             <label for="palabra">Escribe la palabra:</label>
             <input type="text" id="palabra" name="palabra" placeholder="Ingresa la palabra">
             <button type="submit" class="Btn">Enviar</button>
@@ -31,5 +32,6 @@
             </a>
         </div>
     </div>
+    <script src="../JS/escuela.js"></script> <!-- Movemos la referencia al script al final del body -->
 </body>
 </html>

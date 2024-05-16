@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(77, 197, 246);
+    text-align: center;
+}
+.container {
+    font-family: 'Inter', sans-serif;
+    color: rgb(55, 82, 103);
+    background-color: rgb(77, 197, 246);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: 0;
+}
+.container .boton{
+    background-color: rgb(75, 166, 236);
+    width: 200px;
+}
+#imagen{
+    border: 3px solid #de0768;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+@media (max-width: 767px) {
+    .formulario img {
+        border: 3px solid #de0768;
+        width: 200px;
+        height:auto;
+        border-radius: 25px;
+    }
+}
+
+.boton-audio {
+    border: none;
+    margin-top: 20px;
+    background-color: rgba(175, 157, 212, 1);
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+}
+
+.boton-audio i {
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+.boton-audio2 {
+    border: none;
+    background-color: rgb(129, 219, 255);
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+
+.boton-audio2 i {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+}
+
+
+
+.boton {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.boton img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+/* Estilos para los botones */
+
+.botones {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    /* Ajusta el margen para mayor espacio */
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los botones a la derecha */
+}
+
+.botones a {
+    text-decoration: none;
+}
+
+.boton,
+.sig {
+    background-color: rgba(42, 107, 183, 1);
+    /* Color de fondo azul */
+    border: none;
+    /* Elimina los bordes */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    margin-left: 10px;
+    /* Espaciado entre los botones */
+    color: white;
+    /* Color del texto */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre los botones */
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+    border-radius: 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    /* Tamaño del texto */
+}
+
+.boton:hover,
+.sig:hover {
+    background-color: rgb(63, 159, 219);
+    /* Color de fondo azul más oscuro al pasar el mouse */
+}
+/* Estilos para el canvas de confeti */
+#confetti-canvas {
+    position: fixed; /* Fija el canvas en la ventana */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho al 100% del viewport */
+    height: 100vh; /* Alto al 100% del viewport */
+    pointer-events: none; /* Evita que el canvas interfiera con eventos del ratón */
+    z-index: 9999; /* Asegura que el canvas esté por encima de todos los demás elementos */
+}

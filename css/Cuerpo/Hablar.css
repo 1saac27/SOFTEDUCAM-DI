@@ -124,3 +124,15 @@ html, body {
 .boton:hover, .sig:hover {
     background-color: rgb(63, 159, 219);
 }
+
+/*ICONO DE MICROFONO*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 200; /* Tamaño de fuente más grande, ajusta según sea necesario */
+}
+.material-symbols-outlined {
+    transform: scale(2); /* Escalar el icono al doble de su tamaño original */
+}
