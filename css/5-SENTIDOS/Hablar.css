@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    font-family: "Inter", sans-serif;
+    background-color: rgb(77, 197, 246);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Asegura que el contenido se extienda hasta el final de la ventana */
+    margin: 0;
+    /* Elimina el margen predeterminado del cuerpo */
+}
+
+main {
+    flex: 1;
+    /* Hace que el área principal ocupe todo el espacio disponible */
+}
+
+
+/* Estilos para el área de instrucciones */
+
+.instruction {
+    width: 100%;
+    text-align: center;
+    margin-top: 35px;
+    /* Ajusta el margen superior */
+}
+
+
+/* Estilos para el botón de audio */
+
+.boton-audio {
+    background-color: #007bff;
+    height: 50px;
+    width: 50px;
+    border-radius: 35px;
+    margin-right: 15px;
+    border: none;
+}
+
+.boton-audio i {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+
+/* Estilos para el texto destacado */
+
+.texto-destacado {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* Estilos para el botón de audio azul */
+
+.boton-audio2 {
+    background-color: rgb(129, 219, 255);
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+    margin-left: -35%;
+    /* Ajuste del margen izquierdo utilizando porcentaje */
+    border: none;
+}
+
+.boton-audio2 i {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+
+/* Estilos para el área de hablar */
+
+.hablar {
+    margin-top: 40px;
+}
+
+.hablar h2 {
+    margin: 0;
+    /* Elimina el margen interno */
+    font-size: 30px;
+    /* Tamaño del texto */
+}
+
+.image h2 {
+    color: rgb(53, 158, 219);
+    /* Cambia el color del texto a azul */
+    font-weight: bold;
+    /* Hace que el texto sea más llenito */
+}
+
+
+/* Estilos para la imagen y el texto */
+
+.image {
+    background-color: rgba(255, 240, 240, 1);
+    width: 320px;
+    height: 320px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Centra horizontalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    /* Centra horizontalmente en su contenedor */
+    margin-top: -60px;
+    /* Ajusta el margen superior */
+}
+
+.img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+
+/* Estilos para el botón de hablar */
+
+.microfono {
+    background-color: rgba(255, 240, 240, 1);
+    height: 50px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    border: none;
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+}
+
+.microfono:hover {
+    background-color: rgba(255, 220, 220, 1);
+    /* Cambia el color al pasar el mouse */
+}
+
+.microfono:active {
+    background-color: rgba(255, 200, 200, 1);
+    /* Cambia el color al presionar el botón */
+}
+
+.microfono h2 {
+    margin: 0;
+    /* Elimina el margen interno */
+    font-size: 25px;
+    /* Tamaño del texto */
+}
+
+
+/* Estilos para los botones */
+
+.botones {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    /* Ajusta el margen para mayor espacio */
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los botones a la derecha */
+}
+
+.botones a {
+    text-decoration: none;
+}
+
+.boton,
+.sig {
+    background-color: rgba(42, 107, 183, 1);
+    /* Color de fondo azul */
+    border: none;
+    /* Elimina los bordes */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    margin-left: 10px;
+    /* Espaciado entre los botones */
+    color: white;
+    /* Color del texto */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre los botones */
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+    border-radius: 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    /* Tamaño del texto */
+}
+
+.boton:hover,
+.sig:hover {
+    background-color: rgb(63, 159, 219);
+    /* Color de fondo azul más oscuro al pasar el mouse */
+}
+
+@media (max-width: 1080px) {
+    .boton-audio2 {
+        margin-left: auto;
+        /* Elimina el margen izquierdo */
+        margin-right: auto;
+        /* Elimina el margen derecho */
+        position: relative;
+        /* Cambia la posición a relativa para que el botón flote dentro de su contenedor */
+        top: 50%;
+        /* Mueve el botón a la mitad verticalmente */
+        left: -20%;
+        /* Centra horizontalmente */
+        transform: translate(-50%, -50%);
+        /* Centra horizontal y verticalmente */
+        margin-top: -10px;
+        /* Añade un margen superior */
+        margin-bottom: 60px;
+        /* Añade un margen inferior */
+    }
+}
