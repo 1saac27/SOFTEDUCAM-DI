@@ -1,83 +1,122 @@
-// Función para inicializar la actividad
-function iniciarActividad() {
-    // Crear una instancia de la clase Actividad
-    const actividad = new Actividad();
-
-    // Obtener la imagen del formulario
-    const imagenFormulario = document.getElementById('imagen-actividad');
-
-    // Mostrar la primera imagen al cargar la página
-    imagenFormulario.src = `../assets/escuela/${actividad.imagenes[actividad.indiceActual]}`;
-}
-
-// Función constructora de la clase Actividad
-class Actividad {
-    constructor() {
-        this.palabras = ["salon", "lapiz", "goma","cuaderno","crayones","sacapuntas","tijeras",
-            "pizarron"
-        ]; 
-        this.imagenes = ["el salon de clases.jpeg", 
-        "salon-01(lapiz)/Lapiz.png",
-         "salon-02(goma)/goma.png","salon-03(cuaderno)/cuaderno.png",
-        "salon-04(crayones)/crayones.png","salon-05(sacapuntas)/sacapuntas.png",
-        "salon-06(tijeras)/tijeras.png","salon-07(pizarron)/pizarron.png"]; 
-        this.indiceActual = 0; 
-        this.init();
-        this.mostrarSiguiente();
+// Definir una lista de objetos con las imágenes y las respuestas correctas
+var imagenesRespuestas = [
+    { 
+        imagen: "../assets/escuela/salon-01(lapiz)/lapiz2.png", 
+        respuesta: "Lápiz",
+        opciones: ["Tijeras", "Lápiz", "Maestra"] // Nuevas opciones para los botones
+    },
+    { 
+        imagen: "../assets/escuela/salon-02(goma)/goma.png", 
+        respuesta: "Goma",
+        opciones: ["Mesa", "Colores", "Goma"] // Nuevas opciones para los botones
+    },
+    { 
+        imagen: "../assets/escuela/salon-03(cuaderno)/cuaderno2.png", 
+        respuesta: "Cuaderno",
+        opciones: ["Cuaderno", "Pizarrón", "Lápiz"] // Nuevas opciones para los botones
+    },
+    { 
+        imagen: "../assets/escuela/salon-04(crayones)/crayones.png", 
+        respuesta: "Crayones",
+        opciones: ["Goma", "Crayones", "Maestra"] // Nuevas opciones para los botones
+    },{ 
+        imagen: "../assets/escuela/salon-05(sacapuntaz)/sacapuntas.png", 
+        respuesta: "Sacapuntas",
+        opciones: ["Sacapuntas", "Reloj", "Mochila"] // Nuevas opciones para los botones
+    },{ 
+        imagen: "../assets/escuela/salon-06(tijeras)/tijeras.png", 
+        respuesta: "Tijeras",
+        opciones: ["Maestra", "Lápiz", "Tijeras"] // Nuevas opciones para los botones
+    },{ 
+        imagen: "../assets/escuela/salon-07(pizarron)/pizarron.png", 
+        respuesta: "Pizarrón",
+        opciones: ["Cuaderno", "Pizarrón", "Crayones"] // Nuevas opciones para los botones
+    },{ 
+        imagen: "../assets/escuela/salon-08(mestra)/maestra.png", 
+        respuesta: "Maestra",
+        opciones: ["Maestra", "Goma", "Tijeras"] // Nuevas opciones para los botones
+    },{ 
+        imagen: "../assets/escuela/salon-09(escritorio)/escritorio.png", 
+        respuesta: "Escritorio",
+        opciones: ["Tijeras", "Goma", "Escritorio"] // Nuevas opciones para los botones
+    }
+    ,{ 
+        imagen: "../assets/escuela/el salon de clases.jpeg", 
+        respuesta: "Salón de Clases",
+        opciones: ["Salón de Clases", "Maestra", "Goma"] // Nuevas opciones para los botones
     }
 
-    // Inicializar la actividad
-    init() {
-        const formulario = document.querySelector('.formulario');
-        formulario.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevenir el envío del formulario
-            this.evaluarPalabra();
+];
+
+var indiceActual = 0;
+var confetti;
+
+// Función para cargar la siguiente imagen y configurar los botones
+ // Función para cargar la siguiente imagen y configurar los botones
+ function cargarSiguiente() {
+    if (indiceActual < imagenesRespuestas.length) {
+        var imagenElement = document.getElementById('imagen');
+        imagenElement.src = imagenesRespuestas[indiceActual].imagen;
+        
+        var respuestas = document.querySelectorAll('.boton');
+        
+        for (var i = 0; i < respuestas.length; i++) {
+            // Asignamos las nuevas opciones a los botones
+            respuestas[i].textContent = imagenesRespuestas[indiceActual].opciones[i];
+            respuestas[i].style.backgroundColor = "";
+            respuestas[i].onclick = verificarRespuesta; // Asignamos la función de verificar respuesta al evento onclick
+        }
+    } else {
+        // Mostrar un alert cuando se hayan mostrado todas las imágenes
+        Swal.fire({
+            icon: null, // Deja el icono en null
+            title: "¡ Felicidades !",
+            html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
+                  '<br><br>' +
+                  '<h2>Has terminado la actividad!</h2>', // Agrega el texto
+            showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
+            willClose: () => {
+                window.location.href = "../1MAIN/Contenido.html"; // Reemplaza con la URL a la que quieres redirigir
+            }
         });
     }
+}
+function verificarRespuesta(event) {
+    var botonClicado = event.target;
+    if (botonClicado.textContent === imagenesRespuestas[indiceActual].respuesta) {
+        //document.getElementById('resultado').textContent = "¡Correcto!";
+        botonClicado.style.backgroundColor = "green"; // Cambiar el color del botón a verde
+        // Mostrar el efecto de confeti
+        var confettiSettings = {
+            target: 'confetti-canvas',
+            max: 100, // Máximo número de confetis
+            size: 1, // Tamaño del confeti
+            rotate: true // Permitir rotación del confeti
+        };
+        confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
 
-    // Evaluar la palabra ingresada
-    evaluarPalabra() {
-        const palabraIngresada = document.getElementById('palabra').value.toLowerCase().trim();
-        const palabraCorrecta = this.palabras[this.indiceActual];
-        
-        console.log('palabra correcta: ' + palabraCorrecta);
-        console.log('palabra ingresada: ' + palabraIngresada);
-
-        if (palabraIngresada === palabraCorrecta) {
-            if (this.indiceActual < this.palabras.length - 1) {
-                this.indiceActual++;
-                this.mostrarSiguiente();
-                Swal.fire({
-                    icon: null, // Deja el icono en null
-                    title: "¡ Excelente !",
-                    html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
-                          '<br><br>' +
-                          '<h2>Has escrito correctamente la palabra!</h2>', // Agrega el texto
-                    showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
-                });
-            }
-        } else {
-            Swal.fire({
-                icon: null, // Deja el icono en null
-                title: "Oh no!",
-                html: '<img src="../assets/triste1.png" style="width: 200px;">' + // Inserta la imagen como HTML
-                      '<br><br>' +
-                      '<h2>La palabra es incorrecta o está mal escrita!</h2>', // Agrega el texto
-                showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
-            });
-            
-        }
-    }
-
-    // Mostrar la siguiente imagen
-    mostrarSiguiente() {
-        const imagen = document.querySelector('.contenedor img');
-        imagen.src = `../assets/escuela/${this.imagenes[this.indiceActual]}`;
-        document.getElementById('palabra').value = "";
+        // Detener y limpiar el confeti después de 3 segundos
+        setTimeout(function() {
+            confetti.clear();
+        }, 1500);
+    } else {
+        //document.getElementById('resultado').textContent = "Incorrecto, intenta de nuevo.";
+        botonClicado.style.backgroundColor = "red";
     }
 }
 
-// Iniciar la actividad al cargar el documento
-$(document).ready(function() {
-    iniciarActividad();
-});
+// Función para avanzar a la siguiente pregunta
+function siguientePregunta() {
+    // Reiniciamos los colores de los botones
+    var respuestas = document.querySelectorAll('.boton');
+    respuestas.forEach(function(boton) {
+        boton.style.backgroundColor = "";
+    });
+    // Incrementamos el índice para cargar la siguiente imagen y configurar los botones
+    indiceActual++;
+    cargarSiguiente();
+}
+
+// Cargar la primera imagen y configurar los botones al cargar la página
+window.onload = cargarSiguiente;

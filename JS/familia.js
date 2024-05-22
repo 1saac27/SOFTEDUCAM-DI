@@ -18,9 +18,11 @@ var imagenesRespuestas = [
 ];
 
 var indiceActual = 0;
+var confetti;
 
-// Función para cargar la siguiente imagen y configurar los botones
-function cargarSiguiente() {
+
+ // Función para cargar la siguiente imagen y configurar los botones
+ function cargarSiguiente() {
     if (indiceActual < imagenesRespuestas.length) {
         var imagenElement = document.getElementById('imagen');
         imagenElement.src = imagenesRespuestas[indiceActual].imagen;
@@ -33,16 +35,19 @@ function cargarSiguiente() {
             respuestas[i].style.backgroundColor = "";
             respuestas[i].onclick = verificarRespuesta; // Asignamos la función de verificar respuesta al evento onclick
         }
-    }else {
+    } else {
         // Mostrar un alert cuando se hayan mostrado todas las imágenes
         Swal.fire({
-                    icon: null, // Deja el icono en null
-                    title: "¡ Felicidades !",
-                    html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
-                          '<br><br>' +
-                          '<h2>Has terminado la actividad!</h2>', // Agrega el texto
-                    showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
-                });
+            icon: null, // Deja el icono en null
+            title: "¡ Felicidades !",
+            html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
+                  '<br><br>' +
+                  '<h2>Has terminado la actividad!</h2>', // Agrega el texto
+            showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
+            willClose: () => {
+                window.location.href = "../1MAIN/Contenido.html"; // Reemplaza con la URL a la que quieres redirigir
+            }
+        });
     }
 }
 function verificarRespuesta(event) {
@@ -57,15 +62,18 @@ function verificarRespuesta(event) {
             size: 1, // Tamaño del confeti
             rotate: true // Permitir rotación del confeti
         };
-        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
+
+        // Detener y limpiar el confeti después de 3 segundos
+        setTimeout(function() {
+            confetti.clear();
+        }, 1500);
     } else {
         //document.getElementById('resultado').textContent = "Incorrecto, intenta de nuevo.";
         botonClicado.style.backgroundColor = "red";
     }
 }
-
-
 
 // Función para avanzar a la siguiente pregunta
 function siguientePregunta() {
