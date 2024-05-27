@@ -19,6 +19,20 @@ html, body {
     width: 100%;
     text-align: center;
 }
+/* Agrega esta clase para la animación de dilatación */
+.pulsating {
+    animation: pulsate 0.3s infinite alternate;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
 
 .boton-audio {
     border: none;
@@ -34,7 +48,7 @@ html, body {
     vertical-align: middle;
 }
 
-.boton-audio2 {
+.boton-audio2 , .boton-audio22 {
     border: none;
     margin-right: 20px;
     margin-top: 20px;
@@ -44,7 +58,7 @@ html, body {
     border-radius: 15px;
 }
 
-.boton-audio2 i {
+.boton-audio2 , .boton-audio22 i {
     color: rgb(0, 0, 0);
     font-size: 40px;
     vertical-align: middle;
@@ -94,6 +108,17 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
 }
+.microfono {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.microfono.escuchando {
+    color: red;
+    background-color: lightgray;
+}
+
 
 .botones {
     position: fixed;

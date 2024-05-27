@@ -116,7 +116,7 @@
     /* Ancho de la imagen */
     height: 300px;
     /* Alto de la imagen */
-    background-image: url('../assets/3-CUIDOCUERPO/nina_modulo.png');
+    background-image: url('../assets/nina_modulo.png');
     /* Ruta de la imagen */
     background-size: contain;
     /* Ajusta el tamaño de la imagen para que se ajuste completamente dentro del contenedor sin cortarla */

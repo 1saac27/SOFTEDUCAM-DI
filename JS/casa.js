@@ -3,17 +3,42 @@ var imagenesRespuestas = [
     {
         imagen: "../assets/CASA/actividad/baño.jpeg",
         opciones: ["../assets/CASA/casa (cocina)/sala.png", "../assets/CASA/casa-recamara2/camita.png", "../assets/CASA/actividad/baño.jpeg"],
-        respuesta:"../assets/CASA/actividad/baño.jpeg"
+        respuesta: "../assets/CASA/actividad/baño.jpeg" //BAÑO
     },
     {
-        imagen: "../assets/CUERPO/los sentidos/oido.png",
-        opciones: ["../assets/img/cabeza_nina.png", "../assets/CUERPO/los sentidos/oido.png", "../assets/CUERPO/los sentidos/boca.png"],
-        respuesta: "../assets/CUERPO/los sentidos/oido.png"
+        imagen: "../assets/CASA/casa/casa1.png",
+        opciones: ["../assets/CASA/casa/casa1.png", "../assets/CASA/casa comedor2/mesa.png", "../assets/CASA/casa-recamara2/camita.png"],
+        respuesta: "../assets/CASA/casa/casa1.png" //CASA 
     },
     {
-        imagen: "../assets/CUERPO/los sentidos/boca.png",
-        opciones: ["../assets/CUERPO/los sentidos/boca.png", "../assets/img/cabeza_nina.png", "../assets/CUERPO/los sentidos/oido.png"],
-        respuesta: "../assets/CUERPO/los sentidos/boca.png"
+        imagen: "../assets/CASA/casa-recamara2/camita.png",
+        opciones: ["../assets/CASA/sala_televicion/tele.png", "../assets/CASA/casa-recamara2/camita.png", "../assets/CASA/casa comedor2/mesa.png"],
+        respuesta: "../assets/CASA/casa-recamara2/camita.png" //RECAMARA
+    },
+    {
+        imagen: "../assets/CASA/casa/casa2.png",
+        opciones: ["../assets/CASA/actividad/salita.jpeg", "../assets/CASA/casa/casa2.png", "../assets/CASA/casa-recamara2/tocador.png"],
+        respuesta: "../assets/CASA/casa/casa2.png" //VENTANA
+    },
+    {
+        imagen: "../assets/CASA/casa (cocina)/cocina.png",
+        opciones: ["../assets/CASA/actividad/salita.jpeg", "../assets/CASA/casa comedor2/silla.png", "../assets/CASA/casa (cocina)/cocina.png"],
+        respuesta: "../assets/CASA/casa (cocina)/cocina.png" //COCINA
+    },
+    {
+        imagen: "../assets/CASA/sala_televicion/tele.png",
+        opciones: ["../assets/CASA/sala_televicion/tele.png", "../assets/CASA/casa-recamara2/camita.png", "../assets/CASA/casa comedor2/mesa.png"],
+        respuesta: "../assets/CASA/sala_televicion/tele.png" //TELEVISION
+    },
+    {
+        imagen: "../assets/CASA/casa/casa2.png",
+        opciones: ["../assets/CASA/actividad/salita.jpeg", "../assets/CASA/casa/casa2.png", "../assets/CASA/casa-recamara2/tocador.png"],
+        respuesta: "../assets/CASA/casa/casa2.png" //REFRIGERADOR
+    },
+    {
+        imagen: "../assets/CASA/casa (cocina)/cocina.png",
+        opciones: ["../assets/CASA/actividad/salita.jpeg", "../assets/CASA/casa comedor2/silla.png", "../assets/CASA/casa (cocina)/cocina.png"],
+        respuesta: "../assets/CASA/casa (cocina)/cocina.png" //SILLA
     }
 ];
 
@@ -119,6 +144,14 @@ function siguientePregunta() {
     }
 }
 
+// Función para mezclar las opciones de imagen
+function mezclarArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 // Función para cargar la siguiente imagen y configurar los botones
 function cargarSiguiente() {
     var container = document.querySelector('.container');
@@ -126,6 +159,9 @@ function cargarSiguiente() {
 
     // Configurar las opciones de imagen
     var opciones = imagenesRespuestas[indiceActual].opciones;
+
+    // Mezclar las opciones
+    mezclarArray(opciones);
 
     for (var i = 0; i < opciones.length; i++) {
         var imgElement = document.createElement('img');

@@ -52,17 +52,19 @@ var indiceActual = 0;
 var confetti;
 
 // Función para cargar la siguiente imagen y configurar los botones
- // Función para cargar la siguiente imagen y configurar los botones
- function cargarSiguiente() {
+function cargarSiguiente() {
     if (indiceActual < imagenesRespuestas.length) {
         var imagenElement = document.getElementById('imagen');
         imagenElement.src = imagenesRespuestas[indiceActual].imagen;
         
         var respuestas = document.querySelectorAll('.boton');
         
+        // Mezclar las opciones de respuesta
+        var opcionesMezcladas = mezclarArray(imagenesRespuestas[indiceActual].opciones);
+
         for (var i = 0; i < respuestas.length; i++) {
-            // Asignamos las nuevas opciones a los botones
-            respuestas[i].textContent = imagenesRespuestas[indiceActual].opciones[i];
+            // Asignamos las nuevas opciones mezcladas a los botones
+            respuestas[i].textContent = opcionesMezcladas[i];
             respuestas[i].style.backgroundColor = "";
             respuestas[i].onclick = verificarRespuesta; // Asignamos la función de verificar respuesta al evento onclick
         }
@@ -81,6 +83,7 @@ var confetti;
         });
     }
 }
+
 function verificarRespuesta(event) {
     var botonClicado = event.target;
     if (botonClicado.textContent === imagenesRespuestas[indiceActual].respuesta) {
@@ -116,6 +119,17 @@ function siguientePregunta() {
     // Incrementamos el índice para cargar la siguiente imagen y configurar los botones
     indiceActual++;
     cargarSiguiente();
+}
+
+// Función para mezclar un array
+function mezclarArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
 
 // Cargar la primera imagen y configurar los botones al cargar la página

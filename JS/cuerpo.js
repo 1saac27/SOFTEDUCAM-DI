@@ -87,6 +87,14 @@ function siguientePregunta() {
     }
 }
 
+// Función para mezclar las opciones de imagen
+function mezclarArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 // Función para cargar la siguiente imagen y configurar los botones
 function cargarSiguiente() {
     var container = document.querySelector('.container');
@@ -94,6 +102,9 @@ function cargarSiguiente() {
 
     // Configurar las opciones de imagen
     var opciones = imagenesRespuestas[indiceActual].opciones;
+
+    // Mezclar las opciones
+    mezclarArray(opciones);
 
     for (var i = 0; i < opciones.length; i++) {
         var imgElement = document.createElement('img');
