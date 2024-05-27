@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yo Cuido Mi Cuerpo</title>
-    <link rel="stylesheet" type="text/css" href="../css/3-CUIDOCUERPO/Hablar.css">
+    <link rel="stylesheet" type="text/css" href="../css/Hablar.css">
     <link rel="stylesheet" type="text/css" href="../css/3-CUIDOCUERPO/Actividad.css">
     <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -20,9 +20,10 @@
         <span class="texto-destacado">Arrastra los audios correspondientes a cada imagen</span>
     </div>
 
-    <!-- Primera fila con texto y botón de audio -->
-    <div class="container">
-        <div class="row">
+    <!-- Contenedor para los botones de audio -->
+    <div id="audioContainer">
+        <!-- Primera fila con texto y botón de audio -->
+        <div class="audio-row">
             <div class="column">
                 <button class="boton-audio3" id="boton-audio1"><i class="material-icons">volume_up</i></button>
             </div>
@@ -31,23 +32,19 @@
             </div>
             <div class="column">
                 <button class="boton-audio3" id="boton-audio3"><i class="material-icons">volume_up</i></button>
-
             </div>
             <div class="column">
                 <button class="boton-audio3" id="boton-audio4"><i class="material-icons">volume_up</i></button>
-
             </div>
             <div class="column">
                 <button class="boton-audio3" id="boton-audio5"><i class="material-icons">volume_up</i></button>
-
             </div>
         </div>
 
         <!-- SEGUNDA fila con texto y botón de audio -->
-        <div class="row">
+        <div class="audio-row">
             <div class="column">
                 <button class="boton-audio3" id="boton-audio6"><i class="material-icons">volume_up</i></button>
-
             </div>
             <div class="column">
                 <button class="boton-audio3" id="boton-audio7"><i class="material-icons">volume_up</i></button>
@@ -63,8 +60,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!-- Primeria fila con imágenes y espacios para el audio -->
     <div class="container2">
@@ -113,22 +108,33 @@
                 <div class="audio-space" id="audio-space10"></div>
             </div>
         </div>
-        <!--BOTON DE ENVIAR-->
+
+        <!-- BOTON DE ENVIAR -->
         <div class="boton-enviar">
             <button class="boton-rosa">Enviar Respuesta</button>
         </div>
 
-
         <div class="botones">
             <button class="boton" onclick="window.history.back();">Volver</button>
-            <a href="./Actividad.html" class="sig">Siguiente</a>
         </div>
 
+        <!-- Modal -->
+        <div id="resultadoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="mensajeResultado" class="text-center"></div>
+                <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagen">
+                <div id="puntuacion" class="text-center"></div>
+                <button id="volverAJugar" class="boton-verde">Volver a jugar</button>
+                <button id="salir" class="boton-rojo">Salir</button>
+            </div>
+        </div>
 
         <!-- Enlace al archivo JavaScript -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="./script.js"></script>
+        <script src="../JS/cuidocuerpo.js"></script>
+
         <script>
             $(function() {
                 $("#navbar-container").load("../NavbarR.html");

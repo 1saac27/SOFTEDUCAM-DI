@@ -48,7 +48,7 @@
     position: absolute;
     left: 175px;
     /* Posición horizontal del cuadro */
-    top: 70px;
+    top: 140px;
     /* Posición vertical del cuadro */
     background-color: #f0f0f0;
     display: flex;
@@ -89,7 +89,7 @@
 
 .texto-lateral {
     position: absolute;
-    top: 150px;
+    top: 240px;
     /* Aumenta la distancia entre el texto y el borde superior del contenedor */
     transform: translateY(-50%);
     left: calc(55% + 20px);
@@ -161,7 +161,7 @@
         /* Centra el texto */
         font-size: 20px;
         /* Reducir el tamaño de la fuente */
-        margin-top: 100px;
+        margin-top: 220px;
         /* Agrega margen superior para separarlo del contenido superior */
     }
     .imagen-debajo {

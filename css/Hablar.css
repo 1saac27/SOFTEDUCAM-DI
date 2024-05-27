@@ -21,8 +21,8 @@ main {
 .instruction {
     width: 100%;
     text-align: center;
-    margin-top: 35px;
-    /* Ajusta el margen superior */
+    margin-top: 135px;
+    /* Ajusta el margen superior para evitar que las instrucciones queden detrás del navbar */
 }
 
 
@@ -74,7 +74,7 @@ main {
 /* Estilos para el área de hablar */
 
 .hablar {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .hablar h2 {
@@ -122,31 +122,30 @@ main {
 
 .microfono {
     background-color: rgba(255, 240, 240, 1);
-    height: 50px;
+    height: 60px;
     width: 250px;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
+    margin-top: 20px;
     border: none;
     transition: background-color 0.3s;
     /* Transición suave para el color de fondo */
 }
 
+.microfono i {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    vertical-align: middle;
+}
+
 .microfono:hover {
-    background-color: rgba(255, 220, 220, 1);
+    background-color: rgb(219, 154, 154);
     /* Cambia el color al pasar el mouse */
 }
 
 .microfono:active {
-    background-color: rgba(255, 200, 200, 1);
+    background-color: rgb(200, 255, 200);
     /* Cambia el color al presionar el botón */
-}
-
-.microfono h2 {
-    margin: 0;
-    /* Elimina el margen interno */
-    font-size: 25px;
-    /* Tamaño del texto */
 }
 
 
@@ -209,9 +208,89 @@ main {
         /* Centra horizontalmente */
         transform: translate(-50%, -50%);
         /* Centra horizontal y verticalmente */
-        margin-top: -10px;
+        margin-top: 15px;
         /* Añade un margen superior */
         margin-bottom: 60px;
         /* Añade un margen inferior */
     }
+}
+
+
+/* Estilo para el modal */
+
+.modalV {
+    display: none;
+    /* Oculta el modal por defecto */
+    position: fixed;
+    /* Posición fija */
+    z-index: 1;
+    /* Índice z para asegurar que esté encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    /* Habilita el desplazamiento si el contenido del modal es demasiado grande */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro semitransparente */
+}
+
+
+/* Estilo para el contenido del modal */
+
+.modal-contentV {
+    background-color: #fefefe;
+    /* Fondo blanco */
+    margin: 15% auto;
+    /* Margen vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    max-width: 350px;
+    /* Ancho máximo del contenido */
+    box-sizing: border-box;
+}
+
+
+/* Media query para pantallas más pequeñas */
+
+@media (max-width: 1080px) {
+    .modal-contentV {
+        width: 70%;
+        /* Reduce el ancho máximo al 90% del viewport */
+        max-width: none;
+        margin: 80% auto;
+        /* Margen vertical y horizontal */
+    }
+}
+
+
+/* Estilo para el botón de cerrar */
+
+.closeV {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeV:hover,
+.closeV:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Estilo para la imagen */
+
+.resultado-imagenV {
+    width: 100%;
+    /* Ancho al 100% del contenedor */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    display: block;
+    /* Para centrar la imagen */
+    margin: auto;
+    /* Para centrar la imagen */
 }

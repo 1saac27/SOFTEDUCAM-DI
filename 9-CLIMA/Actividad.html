@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El clima</title>
+    <link rel="stylesheet" type="text/css" href="../css/Hablar.css">
+    <link rel="stylesheet" type="text/css" href="../css/9-CLIMA/Actividad.css">
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+
+    <div class="instruction">
+        <button class="boton-audio" id="play-instruction"><i class="material-icons">volume_up</i></button>
+        <span class="texto-destacado">Escucha y selecciona la palabra</span>
+    </div>
+
+    <div class="container">
+        <button class="boton-audio2">
+            <i class="material-icons">volume_up</i>
+        </button>
+        <img id="imagen" alt="Imagen">
+        <div class="botonesF">
+            <button id="boton1" class="boton"></button>
+            <button id="boton2" class="boton"></button>
+            <button id="boton3" class="boton"></button>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="resultadoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="mensajeResultado" class="text-center"></div>
+            <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagen">
+            <div id="puntuacion" class="text-center"></div>
+            <button id="volverAJugar" class="boton-verde">Volver a jugar</button>
+            <button id="salir" class="boton-rojo">Salir</button>
+        </div>
+    </div>
+
+    <div class="botones">
+        <button class="botonV" onclick="window.history.back();">Volver</button>
+    </div>
+    <!-- Cierra el div .botones -->
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../JS/clima.js"></script>
+    <!-- Mueve este script aquí -->
+    <script>
+        $(function() {
+            $("#navbar-container").load("../NavbarR.html");
+        });
+    </script>
+</body>
+
+</html>

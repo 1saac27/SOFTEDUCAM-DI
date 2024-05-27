@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Alimentacion</title>
+    <link rel="stylesheet" type="text/css" href="../css/4-ALIMENTACION/Actividad.css">
+    <link rel="stylesheet" type="text/css" href="../css/Hablar.css">
+    <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <!-- DIV DE LLAMADA DEL NAVBAR -->
+    <div id="navbar-container"></div>
+
+    <div class="instruction">
+        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+        <span class="texto-destacado">Memoriza y aprende</span>
+    </div>
+
+    <!-- Aquí va tu contenedor principal -->
+    <div id="main-container">
+        <!-- Botón para iniciar el juego -->
+        <button id="start-button">¡Vamos!</button>
+
+        <!-- Elementos para mostrar aciertos, turnos y tiempo restante -->
+        <div id="game-info">
+            <p>Aciertos: <span id="aciertos">0</span></p>
+            <p>Turnos: <span id="turnos">0</span></p>
+        </div>
+        <!-- Contenedor específico para el juego de memoria -->
+        <div class="game-container">
+            <div id="game-board" class="game-board"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="resultadoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="mensajeResultado" class="text-center"></div>
+            <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagen">
+            <div id="puntuacion" class="text-center"></div>
+            <button id="volverAJugar" class="boton-verde">Volver a jugar</button>
+            <button id="salir" class="boton-rojo">Salir</button>
+        </div>
+    </div>
+
+    <div class="botones">
+        <button class="boton" onclick="window.history.back();">Volver</button>
+    </div>
+
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../JS/alimentacion.js"></script>
+    <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
+
+    <script>
+        $(function() {
+            $("#navbar-container").load("../NavbarR.html");
+        });
+    </script>
+
+</body>
+
+</html>

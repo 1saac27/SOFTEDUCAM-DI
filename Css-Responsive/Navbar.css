@@ -1,97 +1,73 @@
-/* PARA RESPONSIVIDAD UTILIZAMOS PORCENTAJES PARA COLOCAR LOS OBJETOS Y CONTENEDORES */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-.nav-01 {
-    display: flex;
-    align-items: center;
+.navbar {
     background-color: #f9f9f9;
-    height: 90px;
-}
-
-.nav-01 h2 {
-    margin-right: 5%;
-    /* Ajuste relativo al ancho del contenedor */
-}
-
-.nav-01 .buttons-navbar {
+    color: rgb(202, 117, 117);
     display: flex;
-    justify-content: flex-end;
-    /* Alinea los botones a la derecha */
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Para asegurarnos de que esté por encima del resto del contenido */
 }
 
-.buttons-navbar a {
-    display: block;
-    text-align: center;
+.logo img {
+    width: 450px;
+    /* Ajusta el tamaño de tu logo según sea necesario */
 }
 
-.nav-01 .buttons-navbar a {
-    font-family: "Inter", sans-serif;
-    font-size: 1.375rem; 
-    text-align: center;
-    cursor: pointer;
-    color: white;
-    margin-left: 2%;
-    /* Ajuste relativo */
-    text-decoration: none;
+.nav-buttons {
+    display: flex;
+    margin-right: 40px;
+    /* Ajusta la distancia a la derecha */
+}
+
+.nav-button {
     background-color: #0E7A9A;
-    display: inline-block;
-    border-radius: 15px;
-    width: auto; /* Ancho automático para adaptarse al contenido */
-    height: auto; /* Altura automática para adaptarse al contenido */
-    max-width: 130px; /* Establece un ancho máximo */
-    padding: 10px 20px; /* Ajusta el espaciado interno */
-    white-space: nowrap; /* Evita que el texto se desborde */
-    box-sizing: border-box; /* Incluye el relleno en el ancho del botón */
+    /* Cambia el color de fondo a azul cielo */
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 25px 25px;
+    /* Ajusta el padding para hacer los botones más grandes */
+    margin-left: 20px;
+    font-size: 18px;
+    /* Ajusta el tamaño de la fuente */
+    cursor: pointer;
+    border-radius: 20px;
+    /* Añade bordes redondeados */
 }
 
-@media only screen and (max-width: 768px) {
-    .nav-01 .buttons-navbar {
-        flex-wrap: wrap; /* Envuelve los botones en múltiples líneas */
-        justify-content: center; /* Centra horizontalmente los botones */
-    }
-
-    .nav-01 .buttons-navbar a {
-        font-size: 1rem; /* Reduce el tamaño de la fuente */
-        padding: 8px 16px; /* Ajusta el espaciado interno */
-        margin: 5px; /* Espaciado entre los botones */
-    }
+.nav-button:hover {
+    background-color: rgba(45, 98, 197, 0.3);
+    /* Cambia el color de fondo cuando se pasa el ratón por encima */
 }
 
-.nav-01 .buttons-navbar a h3 {
-    margin-top: 10px;
-}
-
-.nav-01 .buttons-navbar h3 {
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
-
-.nav-01 h2 {
-    margin-right: 5%;
-    /* Utilizando un porcentaje para el margen derecho */
-}
-
-#SOFTEDUCAM {
-    width: 50%;
-    /* Utilizando un porcentaje para el ancho */
-    margin-right: 5%;
-    /* Utilizando un porcentaje para el margen derecho */
-}
-
-@media only screen and (max-width: 768px) {
-    /*@media se aplica únicamente cuando el ancho de la pantalla es igual o menor a 768 píxeles */
-    .nav-01 {
+@media screen and (max-width: 768px) {
+    .navbar {
         flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        /* Permite que el navbar crezca según el contenido */
     }
-    .nav-01 h2 {
+    .nav-buttons {
         margin-right: 0;
-        margin-bottom: 10px;
+        /* Elimina el margen a la derecha */
+        margin-top: 10px;
     }
-    .buttons-navbar a {
-        margin-left: 0;
-        margin-top: 5px;
-        /* Espacio entre los botones */
+    .nav-button {
+        margin: 5px 3px;
+        /* Ajusta el margen vertical y horizontalmente */
+        padding: 20px 20px;
+        /* Ajusta el tamaño del padding para hacer los botones más pequeños */
+        font-size: 18px;
+        /* Reduzca el tamaño de la fuente para ajustarse al tamaño del botón */
+    }
+    .logo img {
+        width: 200px;
+        /* Ajusta el tamaño de la imagen del logo para pantallas más pequeñas */
+        align-self: flex-start;
+        /* Alinea el logo a la parte superior (izquierda) del contenedor flex */
     }
 }

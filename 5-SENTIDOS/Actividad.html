@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los Sentidos</title>
-    <link rel="stylesheet" type="text/css" href="../css/5-SENTIDOS/Hablar.css">
+    <link rel="stylesheet" type="text/css" href="../css/Hablar.css">
     <link rel="stylesheet" type="text/css" href="../css/5-SENTIDOS/Actividad.css">
     <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -16,83 +16,41 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
-        <span class="texto-destacado">Une con lineas. ¿Que se puede hacer con los sentidos?</span>
+        <button class="boton-audio" id="play-instruction"><i class="material-icons">volume_up</i></button>
+        <span class="texto-destacado">Escucha el audio y selecciona la imagen correcta</span>
+    </div>
+
+    <div class="audio-container">
+        <button class="botn" id="audio-instruction"><i class="material-icons">volume_up</i></button>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="column">
-                <div class="image">
-                    <img src="../assets/5-SENTIDOS/boca.png" alt="Imagen">
-                </div>
-            </div>
-            <div class="column">
-                <div class="image">
-                    <img src="../assets/5-SENTIDOS/nose.png" alt="Imagen">
-                </div>
-            </div>
-            <div class="column">
-                <div class="image">
-                    <img src="../assets/5-SENTIDOS/mano.png" alt="Imagen">
-                </div>
-            </div>
-            <div class="column">
-                <div class="image">
-                    <img src="../assets/5-SENTIDOS/oido.png" alt="Imagen">
-                </div>
-            </div>
-            <div class="column">
-                <div class="image">
-                    <img src="../assets/5-SENTIDOS/ojos_verdes.png" alt="Imagen">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <div class="text">
-                    <p>ESCUCHAR</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="text">
-                    <p>TOCAR</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="text">
-                    <p>VER</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="text">
-                    <p>SOBOREAR</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="text">
-                    <p>OLER</p>
-                </div>
-            </div>
-        </div>
+        <!-- Las imágenes se generarán dinámicamente desde JavaScript -->
     </div>
 
-    <!--BOTON DE ENVIAR-->
-    <div class="boton-enviar">
-        <button class="boton-rosa">Enviar Respuesta</button>
+    <!-- Modal -->
+    <div id="resultadoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="mensajeResultado" class="text-center"></div>
+            <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagen">
+            <div id="puntuacion" class="text-center"></div>
+            <button id="volverAJugar" class="boton-verde">Volver a jugar</button>
+            <button id="salir" class="boton-rojo">Salir</button>
+        </div>
     </div>
-
 
     <div class="botones">
         <button class="boton" onclick="window.history.back();">Volver</button>
-        <a href="./Actividad.html" class="sig">Siguiente</a>
     </div>
+    <!-- Cierra el div .botones -->
 
 
     <!-- Enlace al archivo JavaScript -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./script.js"></script>
+    <script src="../JS/sentidos.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");

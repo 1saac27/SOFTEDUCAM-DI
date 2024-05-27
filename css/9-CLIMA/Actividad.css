@@ -1,0 +1,217 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    /* Ajusta el margen superior según sea necesario */
+}
+
+.boton-audio2 {
+    border: none;
+    background-color: rgb(129, 219, 255);
+    height: 60px;
+    width: 60px;
+    border-radius: 20%;
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre los botones */
+}
+
+.boton-audio2 i {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    margin: auto;
+}
+
+#imagen {
+    display: block;
+    margin-bottom: 10px;
+    /* Espacio entre la imagen y los botones */
+    width: 50%;
+    /* Asegura que la imagen ocupe aproximadamente la mitad del contenedor */
+    max-width: 20%;
+    /* Asegura que la imagen no sobrepase el contenedor */
+    height: auto;
+    background-color: white;
+    /* Fondo blanco para la imagen */
+    border-radius: 15px;
+    /* Bordes redondeados de 15px */
+    padding: 10px;
+    /* Espacio interno para que el fondo blanco sea visible */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar un efecto de profundidad */
+    margin-top: -60px;
+    /* Ajusta el margen superior según sea necesario */
+}
+
+.botonesF {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Espacio entre los botones */
+    width: 100%;
+    /* Asegura que el contenedor de los botones ocupe todo el ancho disponible */
+    margin-top: 20px;
+    /* Ajusta el margen superior según sea necesario */
+}
+
+.boton {
+    background-color: #197ad4;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color del texto del botón */
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Media query para pantallas pequeñas */
+
+@media (max-width: 1080px) {
+    .container {
+        margin-top: 20px;
+        /* Ajusta el margen superior según sea necesario */
+    }
+    .botonesF {
+        flex-direction: column;
+        /* Apila los botones verticalmente */
+        align-items: center;
+        /* Centra los botones */
+    }
+    .boton {
+        width: 50%;
+        /* Ajusta el ancho de los botones */
+        margin-bottom: 10px;
+        /* Espacio entre los botones */
+    }
+    #imagen {
+        max-width: 100%;
+        /* Hace que la imagen ocupe más ancho en pantallas pequeñas */
+    }
+}
+
+
+/* Estilos para los botones */
+
+.botones {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    /* Ajusta el margen para mayor espacio */
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los botones a la derecha */
+}
+
+.botones a {
+    text-decoration: none;
+}
+
+.botonV {
+    background-color: rgba(42, 107, 183, 1);
+    /* Color de fondo azul */
+    border: none;
+    /* Elimina los bordes */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    margin-left: 10px;
+    /* Espaciado entre los botones */
+    color: white;
+    /* Color del texto */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre los botones */
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+    border-radius: 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    /* Tamaño del texto */
+}
+
+.botonV:hover {
+    background-color: rgb(63, 159, 219);
+    /* Color de fondo azul más oscuro al pasar el mouse */
+}
+
+
+/* Estilos del modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 140px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    border-radius: 15px;
+    /* Añade esquinas redondeadas */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.resultado-imagen {
+    width: 150px;
+    height: auto;
+    margin: 10px 0;
+}
+
+.boton-verde {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    /* Añade esquinas redondeadas */
+}
+
+.boton-rojo {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    /* Añade esquinas redondeadas */
+}
+
+.boton-verde:hover,
+.boton-rojo:hover {
+    opacity: 0.8;
+}
