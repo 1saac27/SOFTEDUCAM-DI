@@ -7,7 +7,9 @@
     justify-content: space-between; /* Distribuye uniformemente los elementos a lo largo del contenedor */
     padding: 10px; /* Agrega un poco de espacio alrededor del contenedor */
 }
-
+#navbar-container{
+    margin-bottom: 100px;
+}
 .cont {
     width: calc(20% - 20px); /* Calcula el ancho para 5 elementos por fila */
     margin: 15px;

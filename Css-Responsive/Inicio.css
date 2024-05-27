@@ -19,7 +19,9 @@ html, body {
     margin: 0;
     /* overflow: hidden; */ /* Elimina esta línea para permitir el desplazamiento */
 }
-
+#navbar-container{
+    margin-bottom: 100px;
+}
 /* Título principal */
 .body-container h1 {
     margin-top: 70px;

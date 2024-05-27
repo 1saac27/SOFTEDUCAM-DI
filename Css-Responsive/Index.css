@@ -9,7 +9,9 @@
 html {
     font-family: "Inter", sans-serif;
 }
-
+#navbar-container{
+    margin-bottom: 100px;
+}
 /* Contenedor principal */
 .grid-container {
     background-color: rgb(77, 197, 246);
