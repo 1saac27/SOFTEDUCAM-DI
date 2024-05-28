@@ -18,9 +18,18 @@ html, body {
     margin: 0;
 }
 
+
 .instruction {
     width: 100%;
     text-align: center;
+    
+}
+@media only screen and (max-width: 600px) {
+    .instruction {
+        width: 100%;
+        text-align: center;
+        margin-top: 80px;
+    }
 }
 /* Agrega esta clase para la animación de dilatación */
 .pulsating {
@@ -73,6 +82,7 @@ html, body {
     justify-content: center;
     width: 100%;
 }
+
 
 .hablar .icon {
     margin-right: 10px;
