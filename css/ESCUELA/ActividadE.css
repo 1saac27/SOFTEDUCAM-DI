@@ -6,6 +6,7 @@ html, body {
     padding: 0;
     background-color: rgb(77, 197, 246);
     text-align: center;
+    margin-top: 55px;
 }
 .container {
     font-family: 'Inter', sans-serif;
@@ -20,6 +21,7 @@ html, body {
 .container .boton{
     background-color: rgb(75, 166, 236);
     width: 200px;
+    flex-direction: row;
 }
 #imagen{
     border: 3px solid #de0768;
@@ -29,6 +31,10 @@ html, body {
     border-radius: 25px;
 }
 @media (max-width: 767px) {
+    body{
+        margin-top: 55px;
+
+    }
     .formulario img {
         border: 3px solid #de0768;
         width: 200px;

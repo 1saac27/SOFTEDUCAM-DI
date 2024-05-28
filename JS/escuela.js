@@ -19,33 +19,37 @@ var imagenesRespuestas = [
         imagen: "../assets/escuela/salon-04(crayones)/crayones.png", 
         respuesta: "Crayones",
         opciones: ["Goma", "Crayones", "Maestra"] // Nuevas opciones para los botones
-    },{ 
+    },
+    { 
         imagen: "../assets/escuela/salon-05(sacapuntaz)/sacapuntas.png", 
         respuesta: "Sacapuntas",
         opciones: ["Sacapuntas", "Reloj", "Mochila"] // Nuevas opciones para los botones
-    },{ 
+    },
+    { 
         imagen: "../assets/escuela/salon-06(tijeras)/tijeras.png", 
         respuesta: "Tijeras",
         opciones: ["Maestra", "Lápiz", "Tijeras"] // Nuevas opciones para los botones
-    },{ 
+    },
+    { 
         imagen: "../assets/escuela/salon-07(pizarron)/pizarron.png", 
         respuesta: "Pizarrón",
         opciones: ["Cuaderno", "Pizarrón", "Crayones"] // Nuevas opciones para los botones
-    },{ 
+    },
+    { 
         imagen: "../assets/escuela/salon-08(mestra)/maestra.png", 
         respuesta: "Maestra",
         opciones: ["Maestra", "Goma", "Tijeras"] // Nuevas opciones para los botones
-    },{ 
+    },
+    { 
         imagen: "../assets/escuela/salon-09(escritorio)/escritorio.png", 
         respuesta: "Escritorio",
         opciones: ["Tijeras", "Goma", "Escritorio"] // Nuevas opciones para los botones
-    }
-    ,{ 
+    },
+    { 
         imagen: "../assets/escuela/el salon de clases.jpeg", 
         respuesta: "Salón de Clases",
         opciones: ["Salón de Clases", "Maestra", "Goma"] // Nuevas opciones para los botones
     }
-
 ];
 
 var indiceActual = 0;
@@ -66,6 +70,7 @@ function cargarSiguiente() {
             // Asignamos las nuevas opciones mezcladas a los botones
             respuestas[i].textContent = opcionesMezcladas[i];
             respuestas[i].style.backgroundColor = "";
+            respuestas[i].disabled = false; // Habilitamos los botones
             respuestas[i].onclick = verificarRespuesta; // Asignamos la función de verificar respuesta al evento onclick
         }
     } else {
@@ -77,18 +82,21 @@ function cargarSiguiente() {
                   '<br><br>' +
                   '<h2>Has terminado la actividad!</h2>', // Agrega el texto
             showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
-            willClose: () => {
-                window.location.href = "../1MAIN/Contenido.html"; // Reemplaza con la URL a la que quieres redirigir
-            }
         });
     }
 }
 
 function verificarRespuesta(event) {
     var botonClicado = event.target;
+    var respuestas = document.querySelectorAll('.boton');
+
     if (botonClicado.textContent === imagenesRespuestas[indiceActual].respuesta) {
-        //document.getElementById('resultado').textContent = "¡Correcto!";
         botonClicado.style.backgroundColor = "green"; // Cambiar el color del botón a verde
+        // Deshabilitar todos los botones
+        respuestas.forEach(function(boton) {
+            boton.disabled = true;
+        });
+
         // Mostrar el efecto de confeti
         var confettiSettings = {
             target: 'confetti-canvas',
@@ -99,13 +107,19 @@ function verificarRespuesta(event) {
         confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
 
-        // Detener y limpiar el confeti después de 3 segundos
+        // Detener y limpiar el confeti después de 1.5 segundos
         setTimeout(function() {
             confetti.clear();
         }, 1500);
+
+        // Avanzar a la siguiente pregunta después de 2 segundos
+        setTimeout(siguientePregunta, 2000);
     } else {
-        //document.getElementById('resultado').textContent = "Incorrecto, intenta de nuevo.";
         botonClicado.style.backgroundColor = "red";
+        // Quitar el color rojo rápidamente
+        setTimeout(function() {
+            botonClicado.style.backgroundColor = "";
+        }, 500);
     }
 }
 
