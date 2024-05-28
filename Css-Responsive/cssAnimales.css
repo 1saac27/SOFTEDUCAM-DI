@@ -48,14 +48,14 @@
     position: absolute;
     left: 175px;
     /* Posición horizontal del cuadro */
-    top: 140px;
+    top: 150px;
     /* Posición vertical del cuadro */
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background-image: url('../assets/3-CUIDOCUERPO/modulo_cuido_cuerpo.jpg');
+    background-image: url('../assets/10-ANIMALES/moduloAnimales.jpg');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -116,7 +116,7 @@
     /* Ancho de la imagen */
     height: 300px;
     /* Alto de la imagen */
-    background-image: url('../assets/nina_modulo.png');
+    background-image: url('../assets/nino_modulo.png');
     /* Ruta de la imagen */
     background-size: contain;
     /* Ajusta el tamaño de la imagen para que se ajuste completamente dentro del contenedor sin cortarla */
@@ -170,19 +170,5 @@
     }
     #miCuadro:hover {
         background-color: rgba(173, 216, 230, 0.9);
-    }
-}
-
-.playing {
-    animation: pulsate 1s infinite;
-}
-
-@keyframes pulsate {
-    0%,
-    100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
     }
 }

@@ -4,15 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yo Cuido Mi Cuerpo</title>
+    <title>Los Animales</title>
     <link rel="stylesheet" type="text/css" href="../css/Hablar.css">
     <link rel="stylesheet" href="../Css-Responsive/Navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../JS/Voz/VozCuidoCuerpo.js"></script>
-    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");
@@ -26,29 +23,18 @@
 
     <div class="instruction">
         <div class="hablar">
-            <button class="boton-audio2" onclick="playAudio('audio3', this)"><i class="material-icons">volume_up</i></button>
+            <button class="boton-audio2"><i class="material-icons">volume_up</i></button>
             <div class="image">
-                <img src="../assets/3-CUIDOCUERPO/niño_comiendo.png" alt="" class="img">
-                <h2>COMER</h2>
+                <img src="../assets/10-ANIMALES/pez.png" alt="" class="img">
+                <h2>PEZ</h2>
             </div>
         </div>
 
         <button class="microfono"> <i class="material-icons">settings_voice</i> </button>
 
-        <!-- Modal -->
-        <div id="resultadoModal" class="modalV">
-            <div class="modal-contentV">
-                <span class="closeV">&times;</span>
-                <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagenV">
-            </div>
-        </div>
-
-        <!-- Audio Elements -->
-        <audio id="audio3" src="../assets/AUDIOS/CUIDOCUERPO/Comer.m4a"></audio>
-
         <div class="botones">
             <button class="boton" onclick="window.history.back();">Volver</button>
-            <a href="./3Jabon.html" class="sig">Siguiente</a>
+            <a href="./10Caballo.html" class="sig">Siguiente</a>
         </div>
     </div>
 </body>

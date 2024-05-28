@@ -8,16 +8,16 @@ $(document).ready(function() {
 
     // Define las palabras clave específicas que se quieren reconocer por página
     const palabrasClavePorPagina = {
-        "1Banarse.html": ["bañarse"],
-        "2Comer.html": ["comer"],
-        "3Jabon.html": ["jabón"],
-        "4Doctor.html": ["doctor"],
-        "5DolorCabeza.html": ["dolor de cabeza"],
-        "6DolorEstomago.html": ["dolor de estómago"],
-        "7Caer.html": ["caer"],
-        "8Medicina.html": ["medicina"],
-        "9Ejercicio.html": ["ejercicio"],
-        "10Descansar.html": ["descansar"]
+        "1Mango.html": ["mango"],
+        "2Naranja.html": ["naranja"],
+        "3Platano.html": ["plátano"],
+        "4Manzana.html": ["manzana"],
+        "5Nopal.html": ["nopal"],
+        "6Elote.html": ["elote"],
+        "7Limon.html": ["limón"],
+        "8Jitomate.html": ["jitomate"],
+        "9Queso.html": ["queso"],
+        "10Leche.html": ["leche"]
     };
 
     // Función para determinar la página actual basada en la URL
@@ -47,25 +47,25 @@ $(document).ready(function() {
             modal.style.display = "none";
             // Si la respuesta es correcta, redirigir a la página correspondiente
             if (imagenSrc === '../assets/correcto.png') {
-                if (paginaActual === "1Banarse.html") {
-                    window.location.href = "2Comer.html"; // Redirige a la página 2
-                } else if (paginaActual === "2Comer.html") {
-                    window.location.href = "3Jabon.html"; // Redirige a la página 3
-                } else if (paginaActual === "3Jabon.html") {
-                    window.location.href = "4Doctor.html"; // Redirige a la página 4
-                } else if (paginaActual === "4Doctor.html") {
-                    window.location.href = "5DolorCabeza.html"; // Redirige a la página 5
-                } else if (paginaActual === "5DolorCabeza.html") {
-                    window.location.href = "6DolorEstomago.html"; // Redirige a la página 6
-                } else if (paginaActual === "6DolorEstomago.html") {
-                    window.location.href = "7Caer.html"; // Redirige a la página 7
-                } else if (paginaActual === "7Caer.html") {
-                    window.location.href = "8Medicina.html"; // Redirige a la página 8
-                } else if (paginaActual === "8Medicina.html") {
-                    window.location.href = "9Ejercicio.html"; // Redirige a la página 9
-                } else if (paginaActual === "9Ejercicio.html") {
-                    window.location.href = "10Descansar.html"; // Redirige a la página 10
-                } else if (paginaActual === "10Descansar.html") {
+                if (paginaActual === "1Mango.html") {
+                    window.location.href = "2Naranja.html"; // Redirige a la página 2
+                } else if (paginaActual === "2Naranja.html") {
+                    window.location.href = "3Platano.html"; // Redirige a la página 3
+                } else if (paginaActual === "3Platano.html") {
+                    window.location.href = "4Manzana.html"; // Redirige a la página 4
+                } else if (paginaActual === "4Manzana.html") {
+                    window.location.href = "5Nopal.html"; // Redirige a la página 5
+                } else if (paginaActual === "5Nopal.html") {
+                    window.location.href = "6Elote.html"; // Redirige a la página 6
+                } else if (paginaActual === "6Elote.html") {
+                    window.location.href = "7Limon.html"; // Redirige a la página 7
+                } else if (paginaActual === "7Limon.html") {
+                    window.location.href = "8Jitomate.html"; // Redirige a la página 8
+                } else if (paginaActual === "8Jitomate.html") {
+                    window.location.href = "9Queso.html"; // Redirige a la página 9
+                } else if (paginaActual === "9Queso.html") {
+                    window.location.href = "10Leche.html"; // Redirige a la página 10
+                } else if (paginaActual === "10Leche.html") {
                     window.location.href = "Actividad.html"; // Redirige a la página Act
                 }
             }

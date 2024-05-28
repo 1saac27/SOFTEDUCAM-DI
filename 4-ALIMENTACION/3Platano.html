@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../JS/Voz/VozAlimentacion.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");
@@ -31,6 +33,14 @@
         </div>
 
         <button class="microfono"> <i class="material-icons">settings_voice</i> </button>
+
+        <!-- Modal -->
+        <div id="resultadoModal" class="modalV">
+            <div class="modal-contentV">
+                <span class="closeV">&times;</span>
+                <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagenV">
+            </div>
+        </div>
 
         <div class="botones">
             <button class="boton" onclick="window.history.back();">Volver</button>

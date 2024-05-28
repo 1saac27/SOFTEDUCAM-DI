@@ -1,19 +1,19 @@
-$(document).ready(function () {
+$(document).ready(function() {
     const audio1 = new Audio('../../assets/AUDIOS/LAESCUELA/ESCUCHA Y REPITE LA PALABRA.aac'); // Ruta al primer archivo de audio
     const audio2 = new Audio('../../assets/AUDIOS/LAESCUELA/SALON.aac'); // Ruta al segundo archivo de audio
 
-    $('.boton-audio').on('click', function () {
+    $('.boton-audio').on('click', function() {
         $(this).addClass('pulsating');
         audio1.play();
-        audio1.onended = function () {
+        audio1.onended = function() {
             $('.boton-audio').removeClass('pulsating');
         };
     });
 
-    $('.boton-audio2').on('click', function () {
+    $('.boton-audio2').on('click', function() {
         $(this).addClass('pulsating');
         audio2.play();
-        audio2.onended = function () {
+        audio2.onended = function() {
             $('.boton-audio2').removeClass('pulsating');
         };
     });
@@ -21,12 +21,12 @@ $(document).ready(function () {
     const micButton = document.querySelector('.microfono');
     let recognitionActive = false;
 
-    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    const recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
 
     const palabrasClavePorPagina = {
         "1Salon.html": ["salón"],
         "2Pizarron.html": ["pizarrón"],
-        "3Escritoio.html": ["escritorio"],
+        "3Escritorio.html": ["escritorio"],
         "4Cuadernos.html": ["cuadernos"],
         "5Maestra.html": ["maestra"],
         "6Goma.html": ["goma"],
@@ -111,9 +111,9 @@ $(document).ready(function () {
         }
         recognitionActive = !recognitionActive;
         micButton.classList.toggle('escuchando');
-        micButton.innerHTML = recognitionActive
-            ? '<span class="material-symbols-outlined">hearing</span>'
-            : '<span class="material-symbols-outlined">mic</span>';
+        micButton.innerHTML = recognitionActive ?
+            '<span class="material-symbols-outlined">hearing</span>' :
+            '<span class="material-symbols-outlined">mic</span>';
         console.log('Reconocimiento de voz ' + (recognitionActive ? 'iniciado' : 'detenido') + '.');
     });
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");
@@ -32,7 +33,7 @@
 
         <!-- Texto lateral -->
         <div class="texto-lateral">
-            <p><button class="boton-audio"><i class="material-icons">volume_up</i></button>Bienvenido</p>
+            <p><button class="boton-audio" onclick="playAudio('audio0', this)"><i class="material-icons">volume_up</i></button>Bienvenido</p>
             <p>¿Estás listo para divertirte y aprender palabras sobre el cuidado de tu cuerpo?</p>
             <p>Da clic al botón verde.</p>
         </div>
@@ -41,6 +42,9 @@
 
     <!-- Imagen debajo del texto lateral -->
     <div class="imagen-debajo"></div>
+
+    <!-- Audio Elements -->
+    <audio id="audio0" src="../assets/AUDIOS/CUIDOCUERPO/Yo cuido mi cuerpo Inicio.m4a"></audio>
 
     <!--Botones de Volver y Siguiente-->
     <div class="botones">
