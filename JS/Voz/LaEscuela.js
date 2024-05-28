@@ -26,7 +26,7 @@ $(document).ready(function () {
     const palabrasClavePorPagina = {
         "1Salon.html": ["salón"],
         "2Pizarron.html": ["pizarrón"],
-        "3Escritoio.html": ["escritorio"],
+        "3Escritorio.html": ["escritorio"],
         "4Cuadernos.html": ["cuadernos"],
         "5Maestra.html": ["maestra"],
         "6Goma.html": ["goma"],
