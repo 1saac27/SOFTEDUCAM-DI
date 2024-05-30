@@ -144,19 +144,19 @@ const audioMap = {
     },
     '1Cuerpo.html': {
         botonAudio1: '../../assets/AUDIOS/LAESCUELA/ESCUCHA Y REPITE LA PALABRA.aac',
-        botonAudio2: '../../assets/AUDIOS/ELCUERPO/cuerpo.aac'
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/cuerpo .aac'
     },
     '2Cabeza.html': {
-        botonAudio2: '../../assets/AUDIOS/ELCUERPO/cabeza.aac'
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/cabeza1.aac'
     },
     '3Ojos.html': {
-        botonAudio2: '../../assets/AUDIOS/ELCUERPO/ojos.aac'
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/ojos1.aac'
     },
     '4Nariz.html': {
         botonAudio2: '../../assets/AUDIOS/ELCUERPO/nariz.aac'
     },
     '5Boca.html': {
-        botonAudio2: '../../assets/AUDIOS/ELCUERPO/boca.aac'
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/boca1.aac'
     },
     '6Piernas.html': {
         botonAudio2: '../../assets/AUDIOS/ELCUERPO/piernas.aac'
@@ -171,7 +171,7 @@ const audioMap = {
         botonAudio2: '../../assets/AUDIOS/ELCUERPO/manos.aac'
     },
     '10Pie.html': {
-        botonAudio2: '../../assets/AUDIOS/ELCUERPO/pied.aac'
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/pied1.aac'
     }
     
     // Agrega más entradas según sea necesario
