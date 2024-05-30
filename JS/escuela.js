@@ -1,4 +1,3 @@
-// Definir una lista de objetos con las imágenes y las respuestas correctas
 var imagenesRespuestas = [
     { 
         imagen: "../assets/escuela/salon-01(lapiz)/lapiz2.png", 
@@ -21,9 +20,9 @@ var imagenesRespuestas = [
         opciones: ["Goma", "Crayones", "Maestra"] // Nuevas opciones para los botones
     },
     { 
-        imagen: "../assets/escuela/salon-05(sacapuntaz)/sacapuntas.png", 
-        respuesta: "Sacapuntas",
-        opciones: ["Sacapuntas", "Reloj", "Mochila"] // Nuevas opciones para los botones
+        imagen: "../assets/escuela/salon-04(crayones)/mochila.png", 
+        respuesta: "Mochila",
+        opciones: ["Mochila", "Reloj", "Mochila"] // Nuevas opciones para los botones
     },
     { 
         imagen: "../assets/escuela/salon-06(tijeras)/tijeras.png", 
@@ -47,19 +46,54 @@ var imagenesRespuestas = [
     },
     { 
         imagen: "../assets/escuela/el salon de clases.jpeg", 
-        respuesta: "Salón de Clases",
-        opciones: ["Salón de Clases", "Maestra", "Goma"] // Nuevas opciones para los botones
+        respuesta: "Salón",
+        opciones: ["Salón", "Maestra", "Goma"] // Nuevas opciones para los botones
     }
 ];
 
+// Mapeo entre el nombre de la imagen y la ruta del archivo de audio
+var audioMap = {
+    "lapiz2.png": "../assets/AUDIOS/LAESCUELA/Lapiz.aac",
+    "goma.png": "../assets/AUDIOS/LAESCUELA/Gooma.aac",
+    "cuaderno2.png": "../assets/AUDIOS/LAESCUELA/Cuaderno.aac",
+    "crayones.png": "../assets/AUDIOS/LAESCUELA/Crayones.aac",
+    "sacapuntas.png": "../../assets/AUDIOS/LAESCUELA/Mochila.aac",
+    "tijeras.png": "../../assets/AUDIOS/LAESCUELA/Tijeras.aac",
+    "pizarron.png": "../assets/AUDIOS/LAESCUELA/Pizarron.aac",
+    "maestra.png": "../assets/AUDIOS/LAESCUELA/Maestra.aac",
+    "escritorio.png": "../assets/AUDIOS/LAESCUELA/Escritorio.aac",
+    "el salon de clases.jpeg": "../assets/AUDIOS/LAESCUELA/BienvenidaEsc.aac"
+};
+
 var indiceActual = 0;
 var confetti;
+// Ruta del audio para el botón boton-audio
+var audioBotonGeneralSrc = "../assets/AUDIOS/LAESCUELA/Escucha y selecciona la palabra.aac";
+// Asociar el audio al botón de audio general llamado boton-audio
+var audioBotonGeneral = document.querySelector('.boton-audio');
+audioBotonGeneral.onclick = function() {
+    var audio = new Audio(audioBotonGeneralSrc);
+    audio.play();
+};
 
 // Función para cargar la siguiente imagen y configurar los botones
 function cargarSiguiente() {
     if (indiceActual < imagenesRespuestas.length) {
         var imagenElement = document.getElementById('imagen');
         imagenElement.src = imagenesRespuestas[indiceActual].imagen;
+        
+        // Obtener el nombre de la imagen actual
+        var imagenNombre = imagenesRespuestas[indiceActual].imagen.split('/').pop();
+        
+        // Obtener la ruta del audio correspondiente a la imagen actual
+        var audioSrc = audioMap[imagenNombre];
+        
+        // Asociar el audio al botón de audio correspondiente
+        var audioBoton = document.querySelector('.boton-audio2');
+        audioBoton.onclick = function() {
+            var audio = new Audio(audioSrc);
+            audio.play();
+        };
         
         var respuestas = document.querySelectorAll('.boton');
         
@@ -77,11 +111,22 @@ function cargarSiguiente() {
         // Mostrar un alert cuando se hayan mostrado todas las imágenes
         Swal.fire({
             icon: null, // Deja el icono en null
-            title: "¡ Felicidades !",
+            title: "¡Felicidades!",
             html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
                   '<br><br>' +
                   '<h2>Has terminado la actividad!</h2>', // Agrega el texto
             showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
+            confirmButtonText: 'OK', // El texto del botón de confirmación
+            showCancelButton: true, // Muestra un segundo botón
+            cancelButtonText: 'Repetir la actividad' // El texto del botón de cancelar
+        }).then((result) => {
+            if (result.isDismissed) {
+                // Si se hizo clic en "Repetir la actividad"
+               
+
+                // Si se hizo clic en "Repetir la actividad"
+                repetirActividad();
+            }
         });
     }
 }
@@ -144,6 +189,12 @@ function mezclarArray(array) {
         array[j] = temp;
     }
     return array;
+}
+
+// Función para repetir la actividad
+function repetirActividad() {
+    indiceActual = 0;
+    cargarSiguiente();
 }
 
 // Cargar la primera imagen y configurar los botones al cargar la página

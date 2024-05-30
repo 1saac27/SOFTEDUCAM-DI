@@ -174,3 +174,84 @@ html, body {
 .material-symbols-outlined {
     transform: scale(2); /* Escalar el icono al doble de su tamaño original */
 }
+/* Estilo para el modal */
+
+.modalV {
+    display: none;
+    /* Oculta el modal por defecto */
+    position: fixed;
+    /* Posición fija */
+    z-index: 1;
+    /* Índice z para asegurar que esté encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    /* Habilita el desplazamiento si el contenido del modal es demasiado grande */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro semitransparente */
+}
+
+
+/* Estilo para el contenido del modal */
+
+.modal-contentV {
+    background-color: #fefefe;
+    /* Fondo blanco */
+    margin: 15% auto;
+    /* Margen vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    max-width: 350px;
+    /* Ancho máximo del contenido */
+    box-sizing: border-box;
+}
+
+.microfono:hover {
+    background-color: rgb(219, 154, 154);
+    /* Cambia el color al pasar el mouse */
+}
+/* Media query para pantallas más pequeñas */
+
+@media (max-width: 1080px) {
+    .modal-contentV {
+        width: 70%;
+        /* Reduce el ancho máximo al 90% del viewport */
+        max-width: none;
+        margin: 80% auto;
+        /* Margen vertical y horizontal */
+    }
+}
+
+
+/* Estilo para el botón de cerrar */
+
+.closeV {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeV:hover,
+.closeV:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Estilo para la imagen */
+
+.resultado-imagenV {
+    width: 100%;
+    /* Ancho al 100% del contenedor */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    display: block;
+    /* Para centrar la imagen */
+    margin: auto;
+    /* Para centrar la imagen */
+}

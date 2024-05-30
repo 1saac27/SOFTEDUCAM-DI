@@ -16,10 +16,12 @@ html, body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
+    
 }
 
 /* Estilo para cada elemento */
 .instruction {
+    
     color: rgb(0, 66, 146);
     width: 100%; /* Ancho del elemento al 100% del contenedor */
     text-align: center;

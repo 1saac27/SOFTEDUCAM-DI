@@ -21,16 +21,14 @@ html, body {
     background-color: rgb(75, 166, 236);
     width: 200px;
 }
-#imagen{
-    border: 3px solid #de0768;
+.container img{
     width: 300px;
-    height: 300px;
+    height: 250px;
     margin-bottom: 20px;
     border-radius: 25px;
-}
+} 
 @media (max-width: 767px) {
     .formulario img {
-        border: 3px solid #de0768;
         width: 200px;
         height:auto;
         border-radius: 25px;

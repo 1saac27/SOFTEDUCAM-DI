@@ -1,4 +1,17 @@
 
+/* Agrega esta clase para la animación de dilatación */
+.pulsating {
+    animation: pulsate 0.3s infinite alternate;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
 /*BOTON CON ICONO DE AUDIO*/
 
 .boton-audio {
@@ -36,6 +49,7 @@
 .container1 {
     position: relative;
     padding: 20px;
+    margin-top: 100px;
     /* Ajusta el relleno para dispositivos móviles */
 }
 

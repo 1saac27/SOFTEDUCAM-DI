@@ -40,13 +40,12 @@
         <div class="body-container">
             <div class="instruction">
                 <h2>
-                    <p><button class="boton-audio"><i class="material-icons">volume_up</i></button>
+                    <p><button class="boton-audio" id="audio1"><i class="material-icons">volume_up</i></button>
                         Escucha y repite la palabra!
                 </h2>
                 </p>
                 <div class="hablar">
-                    <button class="boton-audio2"><i class="material-icons">volume_up</i></button>
-
+                    <button class="boton-audio2" id="audio2"><i class="material-icons">volume_up</i></button>
                     <div class="image">
                         <img src="../assets/escuela/la escuela.png" alt="" class="img">
                         <h2>SALÓN</h2>
@@ -57,6 +56,14 @@
                         settings_voice
                     </span>
                 </button>
+                <!-- Modal -->
+                <div id="resultadoModal" class="modalV">
+                    <div class="modal-contentV">
+                        <span class="closeV">&times;</span>
+                        <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagenV">
+                    </div>
+                </div>
+
                 <div class="botones">
                     <button class="boton" onclick="window.history.back();">Volver</button>
                     <a href="./2Pizarron.html" class="sig">

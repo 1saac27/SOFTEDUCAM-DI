@@ -8,16 +8,16 @@ $(document).ready(function() {
 
     // Define las palabras clave específicas que se quieren reconocer por página
     const palabrasClavePorPagina = {
-        "1Salon.html": ["salón"],
-        "2Pizarron.html": ["pizarrón"],
-        "3Escritorio.html": ["escritorio"],
-        "4Cuadernos.html": ["cuaderno"],
-        "5Maestra.html": ["maestra"],
-        "6Goma.html": ["goma"],
-        "7Lapiz.html": ["lápiz"],
-        "8Crayones.html": ["crayones"],
-        "9Tijeras.html": ["tijeras"],
-        "10Mochila.html": ["mochila"]
+        "1Cuerpo.html": ["cuerpo"],
+        "2Cabeza.html": ["cabeza"],
+        "3Ojos.html": ["ojos"],
+        "4Nariz.html": ["nariz"],
+        "5Boca.html": ["boca"],
+        "6Piernas.html": ["piernas"],
+        "7Espalda.html": ["espalda"],
+        "8Hombro.html": ["hombro"],
+        "9Manos.html": ["manos"],
+        "10Pie.html": ["pie"]
     };
 
     // Función para determinar la página actual basada en la URL
@@ -47,26 +47,26 @@ $(document).ready(function() {
             modal.style.display = "none";
             // Si la respuesta es correcta, redirigir a la página correspondiente
             if (imagenSrc === '../assets/correcto.png') {
-                if (paginaActual === "1Salon.html") {
-                    window.location.href = "2Pizarron.html";
-                } else if (paginaActual === "2Pizarron.html") {
-                    window.location.href = "3Escritorio.html";
-                } else if (paginaActual === "3Escritorio.html") {
-                    window.location.href = "4Cuadernos.html";
-                } else if (paginaActual === "4Cuadernos.html") {
-                    window.location.href = "5Maestra.html";
-                } else if (paginaActual === "5Maestra.html") {
-                    window.location.href = "6Goma.html";
-                } else if (paginaActual === "6Goma.html") {
-                    window.location.href = "7Lapiz.html";
-                } else if (paginaActual === "7Lapiz.html") {
-                    window.location.href = "8Crayones.html";
-                } else if (paginaActual === "8Crayones.html") {
-                    window.location.href = "9Tijeras.html";
-                } else if (paginaActual === "9Tijeras.html") {
-                    window.location.href = "10Mochila.html";
-                } else if (paginaActual === "10Mochila.html") {
-                    window.location.href = "ActividadE.html";
+                if (paginaActual === "1Cuerpo.html") {
+                    window.location.href = "2Cabeza.html";
+                } else if (paginaActual === "2Cabeza.html") {
+                    window.location.href = "3Ojos.html";
+                } else if (paginaActual === "3Ojos.html") {
+                    window.location.href = "4Nariz.html";
+                } else if (paginaActual === "4Nariz.html") {
+                    window.location.href = "5Boca.html";
+                } else if (paginaActual === "5Boca.html") {
+                    window.location.href = "6Piernas.html";
+                } else if (paginaActual === "6Piernas.html") {
+                    window.location.href = "7Espalda.html";
+                } else if (paginaActual === "7Espalda.html") {
+                    window.location.href = "8Hombro.html";
+                } else if (paginaActual === "8Hombro.html") {
+                    window.location.href = "9Manos.html";
+                } else if (paginaActual === "9Manos.html") {
+                    window.location.href = "10Pie.html";
+                } else if (paginaActual === "10Pie.html") {
+                    window.location.href = "Actividad.html";
                 }
             }
         }, 3000); // Espera 3 segundos antes de cerrar el modal o redirigir
@@ -139,39 +139,39 @@ $(document).ready(function() {
 
 // Definir un objeto con los nombres de los archivos HTML y los audios correspondientes
 const audioMap = {
-    'inicioEscuela.html': {
-        botonAudio1: '../../assets/AUDIOS/LAESCUELA/BienvenidaEsc.aac',
+    'inicioCuerpo.html': {
+        botonAudio1: '../../assets/AUDIOS/ELCUERPO/inicio.aac',
     },
-    '1Salon.html': {
+    '1Cuerpo.html': {
         botonAudio1: '../../assets/AUDIOS/LAESCUELA/ESCUCHA Y REPITE LA PALABRA.aac',
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/SALON.aac'
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/cuerpo.aac'
     },
-    '2Pizarron.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Pizarron.aac'
+    '2Cabeza.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/cabeza.aac'
     },
-    '3Escritorio.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Escritorio.aac'
+    '3Ojos.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/ojos.aac'
     },
-    '4Cuadernos.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Cuaderno.aac'
+    '4Nariz.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/nariz.aac'
     },
-    '5Maestra.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Maestra.aac'
+    '5Boca.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/boca.aac'
     },
-    '6Goma.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Gooma.aac'
+    '6Piernas.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/piernas.aac'
     },
-    '7Lapiz.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Lapiz.aac'
+    '7Espalda.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/espalda.aac'
     },
-    '8Crayones.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Crayones.aac'
+    '8Hombro.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/Hombro.aac'
     },
-    '9Tijeras.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Tijeras.aac'
+    '9Manos.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/manos.aac'
     },
-    '10Mochila.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Mochila.aac'
+    '10Pie.html': {
+        botonAudio2: '../../assets/AUDIOS/ELCUERPO/pied.aac'
     }
     
     // Agrega más entradas según sea necesario
