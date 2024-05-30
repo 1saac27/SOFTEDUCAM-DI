@@ -117,7 +117,7 @@ function siguientePregunta() {
     if (indiceActual < imagenesRespuestas.length) {
         cargarSiguiente();
     } else {
-        mostrarResultadoModal(); // Mostrar el modal al completar todas las actividades
+        setTimeout(mostrarResultadoModal, 3000); // Mostrar el modal al completar todas las actividades después de 3 segundos
     }
 }
 

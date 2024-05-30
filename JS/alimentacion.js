@@ -113,7 +113,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1000);
+    }, 2000);
 }
 
 // Función para reiniciar el tablero después de un par de intentos
@@ -136,7 +136,7 @@ function flipAllCards() {
 // Función para comprobar si el juego ha sido ganado
 function checkIfGameWon() {
     if (aciertos === cardsArray.length / 2) {
-        mostrarFelicidades(); // Mostrar el modal de felicitaciones
+        setTimeout(mostrarFelicidades, 3000); // Mostrar el modal de felicitaciones después de 3 segundos
     }
 }
 
