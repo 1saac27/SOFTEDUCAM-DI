@@ -37,6 +37,21 @@ $(document).ready(function() {
     audioContainer.append(row1);
     audioContainer.append(row2);
 
+    // Hacer que los botones de audio reproduzcan su respectivo audio al hacer clic
+    $(".boton-audio3").on('click', function() {
+        var audioElement = $(this).find("audio")[0];
+        if (audioElement) {
+            // Iniciar la reproducción del audio
+            audioElement.play();
+            // Agregar la clase de animación al botón
+            $(this).addClass('pulsate');
+            // Remover la clase de animación después de que termine el audio
+            audioElement.onended = function() {
+                $(".boton-audio3").removeClass('pulsate');
+            };
+        }
+    });
+
     // Hacer los botones de audio arrastrables
     $(".boton-audio3").each(function() {
         $(this).attr('draggable', true);

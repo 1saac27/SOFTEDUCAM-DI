@@ -137,9 +137,10 @@ function flipAllCards() {
 // Función para comprobar si el juego ha sido ganado
 function checkIfGameWon() {
     if (aciertos === cardsArray.length / 2) {
-        mostrarFelicidades(); // Mostrar el modal de felicitaciones
+        setTimeout(mostrarFelicidades, 3000); // Mostrar el modal de felicitaciones después de 3 segundos
     }
 }
+
 
 // Función para mostrar el modal con el mensaje de felicitaciones
 function mostrarFelicidades() {
