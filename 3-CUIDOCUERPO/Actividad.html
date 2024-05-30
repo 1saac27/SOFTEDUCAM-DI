@@ -16,10 +16,12 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+        <button class="boton-audio" onclick="playAudio('audio200', this)"><i class="material-icons">volume_up</i></button>
         <span class="texto-destacado">Arrastra los audios correspondientes a cada imagen</span>
     </div>
 
+    <!-- Audio Elements -->
+    <audio id="audio200" src="../assets/AUDIOS/CUIDOCUERPO/Audios a cada imagen.m4a"></audio>
     <!-- Contenedor para los botones de audio -->
     <div id="audioContainer">
         <!-- Primera fila con texto y botón de audio -->
@@ -146,6 +148,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../JS/cuidocuerpo.js"></script>
+        <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
 
         <script>
             $(function() {

@@ -16,9 +16,12 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+        <button class="boton-audio" onclick="playAudio('audio300', this)"><i class="material-icons">volume_up</i></button>
         <span class="texto-destacado">Memoriza y aprende</span>
     </div>
+
+    <!-- Audio Elements -->
+    <audio id="audio300" src="../assets/AUDIOS/ALIMENTACION/Memoriza y aprende.m4a"></audio>
 
     <!-- Aquí va tu contenedor principal -->
     <div id="main-container">
@@ -57,6 +60,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../JS/alimentacion.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
 
     <script>

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../JS/Voz/VozSentidos.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");
@@ -22,17 +25,29 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+        <button class="boton-audio" onclick="playAudio('audio1', this)"><i class="material-icons">volume_up</i></button>
         <span class="texto-destacado">Escucha y repite las palabras</span>
         <div class="hablar">
-            <button class="boton-audio2"><i class="material-icons">volume_up</i></button>
+            <button class="boton-audio2" onclick="playAudio('audio51', this)"><i class="material-icons">volume_up</i></button>
             <div class="image">
                 <img src="../assets/5-SENTIDOS/ojos_verdes.png" alt="" class="img">
                 <h2>VER</h2>
             </div>
         </div>
 
+        <!-- Audio Elements -->
+        <audio id="audio1" src="../assets/AUDIOS/CUIDOCUERPO/Escucha y repite las palabras.m4a"></audio>
+        <audio id="audio51" src="../assets/AUDIOS/SENTIDOS/Ver.m4a"></audio>
+
         <button class="microfono"> <i class="material-icons">settings_voice</i> </button>
+
+        <!-- Modal -->
+        <div id="resultadoModal" class="modalV">
+            <div class="modal-contentV">
+                <span class="closeV">&times;</span>
+                <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagenV">
+            </div>
+        </div>
 
         <div class="botones">
             <button class="boton" onclick="window.history.back();">Volver</button>
