@@ -24,6 +24,8 @@
             $("#navbar-container").load("../NavbarR.html");
         });
     </script>
+    <script src="../JS/Voz/LaFamilia.js"></script>
+
     <title>Hablar Actividad</title>
 </head>
 
@@ -36,7 +38,7 @@
             <div class="instruction">
                 
                 <div class="hablar">
-                    <button class="boton-audio2"><i class="material-icons">volume_up</i></button>
+                    <button class="boton-audio2" id="audio2"><i class="material-icons">volume_up</i></button>
 
                     <div class="image">
                         <img src="../assets/FAMILIA1/hermano.jpeg" alt="" class="img">
@@ -48,6 +50,13 @@
                         settings_voice
                         </span>
                 </button>
+                 <!-- Modal -->
+                 <div id="resultadoModal" class="modalV">
+                    <div class="modal-contentV">
+                        <span class="closeV">&times;</span>
+                        <img id="resultadoImagen" src="" alt="Imagen de resultados" class="resultado-imagenV">
+                    </div>
+                </div>
                 <div class="botones">
                     <button class="boton" onclick="window.history.back();">Volver</button>
                     <a href="./5Abuela.html" class="sig">

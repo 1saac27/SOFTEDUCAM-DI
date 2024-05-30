@@ -53,7 +53,7 @@ var imagenesRespuestas = [
 
 // Mapeo entre la ruta de la imagen y la ruta del archivo de audio
 var audioMap = {
-    "../assets/img/cabeza_nina.png": "../assets/AUDIOS/ELCUERPO/cabeza.aac",
+    "../assets/img/cabeza_nina.png": "../assets/AUDIOS/ELCUERPO/cabeza1.aac",
     "../assets/CUERPO/los sentidos/oido.png": "../assets/AUDIOS/ELCUERPO/oreja.aac",
     "../assets/CUERPO/los sentidos/boca.png": "../assets/AUDIOS/ELCUERPO/boca.aac",
     "../assets/CUERPO/los sentidos/ojitos_mentirosos.png": "../assets/AUDIOS/ELCUERPO/ojos.aac",
