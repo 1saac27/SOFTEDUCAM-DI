@@ -37,33 +37,32 @@ $(document).ready(function() {
     audioContainer.append(row1);
     audioContainer.append(row2);
 
-    // Hacer los botones de audio arrastrables
-    $(".boton-audio3").each(function() {
-        $(this).attr('draggable', true);
-    });
+    var selectedAudioButton = null;
 
-    // Función para manejar el inicio del arrastre de los elementos de audio
-    $(".boton-audio3").on('dragstart', function(event) {
-        // Agregar un atributo "data-audio" al elemento de audio para identificarlo durante el arrastre
-        event.originalEvent.dataTransfer.setData('audio', $(this).attr('id'));
+    // Hacer que los botones de audio se seleccionen al hacer clic
+    $(".boton-audio3").on('click', function() {
+        var audioElement = $(this).find("audio")[0];
+        if (audioElement) {
+            // Iniciar la reproducción del audio
+            audioElement.play();
+            // Seleccionar el botón de audio
+            selectedAudioButton = $(this);
+            // Agregar la clase de animación al botón
+            $(this).addClass('pulsate');
+            // Remover la clase de animación después de que termine el audio
+            audioElement.onended = function() {
+                $(".boton-audio3").removeClass('pulsate');
+            };
+        }
     });
 
     // Función para manejar el soltar de los elementos de audio en los espacios de audio
-    $(".audio-space").on('dragover', function(event) {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del navegador
-    });
-
-    $(".audio-space").on('drop', function(event) {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del navegador
-
-        // Obtener el ID del botón de audio que fue soltado
-        var audioId = event.originalEvent.dataTransfer.getData('audio');
-
-        // Obtener el ID del espacio de audio donde se soltó el audio
-        var audioSpaceId = $(this).attr('id');
-
-        // Mover el audio al espacio de audio correspondiente
-        $("#" + audioId).appendTo($(this));
+    $(".audio-space").on('click', function(event) {
+        if (selectedAudioButton) {
+            // Mover el audio al espacio de audio correspondiente
+            $(this).empty().append(selectedAudioButton);
+            selectedAudioButton = null;
+        }
     });
 
     // Objeto que almacena la relación entre los IDs de los audios y los espacios correspondientes

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");
@@ -32,11 +34,11 @@
 
         <!-- Texto lateral -->
         <div class="texto-lateral">
-            <p><button class="boton-audio"><i class="material-icons">volume_up</i></button>Bienvenido</p>
+            <p><button class="boton-audio" onclick="playAudio('audio9', this)"><i class="material-icons">volume_up</i></button>Bienvenido</p>
             <p>¿Estás listo para divertirte y aprender sobre el Clima?</p>
             <p>Da clic al botón verde.</p>
         </div>
-
+        <audio id="audio9" src="../assets/AUDIOS/CLIMA/Inició clima.m4a"></audio>
     </div>
 
     <!-- Imagen debajo del texto lateral -->

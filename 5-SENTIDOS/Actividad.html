@@ -16,9 +16,10 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio" id="play-instruction"><i class="material-icons">volume_up</i></button>
+        <button class="boton-audio" id="play-instruction" onclick="playAudio('audio001', this)"><i class="material-icons">volume_up</i></button>
         <span class="texto-destacado">Escucha el audio y selecciona la imagen correcta</span>
     </div>
+    <audio id="audio001" src="../assets/AUDIOS/SENTIDOS/Escucha y selecciona.m4a"></audio>
 
     <div class="audio-container">
         <button class="botn" id="audio-instruction"><i class="material-icons">volume_up</i></button>
@@ -51,6 +52,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../JS/sentidos.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");

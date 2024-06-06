@@ -184,3 +184,23 @@
 .boton-rojo:hover {
     opacity: 0.8;
 }
+
+@media (max-width: 1080px) {
+    .game-board {
+        grid-template-columns: repeat(5, 65px);
+        grid-gap: 10px;
+        margin-top: -250px;
+    }
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+    .card .card-front img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+    #start-button {
+        position: absolute;
+        margin-top: -170px;
+    }
+}

@@ -3,67 +3,67 @@ var imagenesRespuestas = [{
         imagen: "../assets/5-SENTIDOS/acidito.png",
         opciones: ["../assets/5-SENTIDOS/boca.png", "../assets/5-SENTIDOS/acidito.png", "../assets/5-SENTIDOS/nariz.png"],
         respuesta: "../assets/5-SENTIDOS/acidito.png",
-        audio: "../audios/acidito.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Ácido.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/boca.png",
         opciones: ["../assets/5-SENTIDOS/nariz.png", "../assets/5-SENTIDOS/oido.png", "../assets/5-SENTIDOS/boca.png"],
         respuesta: "../assets/5-SENTIDOS/boca.png",
-        audio: "../audios/boca.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Probar.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/nieve.png",
         opciones: ["../assets/5-SENTIDOS/salado.png", "../assets/5-SENTIDOS/nieve.png", "../assets/5-SENTIDOS/mano.png"],
         respuesta: "../assets/5-SENTIDOS/nieve.png",
-        audio: "../audios/nieve.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Dulce.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/ojos_verdes.png",
         opciones: ["../assets/5-SENTIDOS/ojos_verdes.png", "../assets/5-SENTIDOS/nariz.png", "../assets/5-SENTIDOS/oido.png"],
         respuesta: "../assets/5-SENTIDOS/ojos_verdes.png",
-        audio: "../audios/ojos_verdes.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Ver.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/contento.png",
         opciones: ["../assets/5-SENTIDOS/ojos_verdes.png", "../assets/5-SENTIDOS/contento.png", "../assets/5-SENTIDOS/patel.png"],
         respuesta: "../assets/5-SENTIDOS/contento.png",
-        audio: "../audios/contento.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Contento.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/mano.png",
         opciones: ["../assets/5-SENTIDOS/mano.png", "../assets/5-SENTIDOS/contento.png", "../assets/5-SENTIDOS/triste.png"],
         respuesta: "../assets/5-SENTIDOS/mano.png",
-        audio: "../audios/mano.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Tocar.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/nariz.png",
         opciones: ["../assets/5-SENTIDOS/nariz.png", "../assets/5-SENTIDOS/oido.png", "../assets/5-SENTIDOS/boca.png"],
         respuesta: "../assets/5-SENTIDOS/nariz.png",
-        audio: "../audios/nariz.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Oler.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/oido.png",
         opciones: ["../assets/5-SENTIDOS/mano.png", "../assets/5-SENTIDOS/oido.png", "../assets/5-SENTIDOS/ojos_verdes.png"],
         respuesta: "../assets/5-SENTIDOS/oido.png",
-        audio: "../audios/oido.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Escuchar.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/patel.png",
         opciones: ["../assets/5-SENTIDOS/triste.png", "../assets/5-SENTIDOS/acidito.png", "../assets/5-SENTIDOS/patel.png"],
         respuesta: "../assets/5-SENTIDOS/patel.png",
-        audio: "../audios/patel.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Sabroso.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/salado.png",
         opciones: ["../assets/5-SENTIDOS/salado.png", "../assets/5-SENTIDOS/acidito.png", "../assets/5-SENTIDOS/contento.png"],
         respuesta: "../assets/5-SENTIDOS/salado.png",
-        audio: "../audios/salado.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Salado.m4a"
     },
     {
         imagen: "../assets/5-SENTIDOS/triste.png",
         opciones: ["../assets/5-SENTIDOS/nieve.png", "../assets/5-SENTIDOS/triste.png", "../assets/5-SENTIDOS/contento.png"],
         respuesta: "../assets/5-SENTIDOS/triste.png",
-        audio: "../audios/triste.mp3"
+        audio: "../../assets/AUDIOS/SENTIDOS/Triste.m4a"
     }
 ];
 
@@ -98,7 +98,7 @@ function mostrarResultadoModal() {
     var botonSalir = document.getElementById("salir");
 
     // Asignar los resultados al modal (puedes personalizar esto según tus necesidades)
-    mensajeResultado.textContent = "¡Todas las actividades se han completado!";
+    mensajeResultado.textContent = "¡FELICIDADES!";
     resultadoImagen.src = "../assets/feliz1.png"; // Aquí puedes cambiar la imagen según desees
     puntuacion.textContent = "Puntuación: 100"; // Puedes calcular la puntuación según el desempeño del usuario
 
@@ -191,3 +191,49 @@ document.getElementById('audio-instruction').addEventListener('click', function(
 window.onload = function() {
     cargarSiguiente();
 };
+
+// Función para reiniciar el juego
+function reiniciarJuego() {
+    // Reiniciar el estado actual y volver a cargar la primera pregunta
+    indiceActual = 0;
+    cargarSiguiente(); // Cargar la primera pregunta
+}
+
+// Función para cargar la siguiente imagen, configurar los botones y cambiar el audio
+function cargarSiguiente() {
+    var container = document.querySelector('.container');
+    container.innerHTML = ""; // Limpiar el contenedor
+
+    // Obtener las opciones de la imagen actual y mezclarlas
+    var opciones = imagenesRespuestas[indiceActual].opciones.slice(); // Copiar el array
+    shuffleArray(opciones); // Mezclar las opciones
+
+    // Agregar las imágenes al contenedor en el nuevo orden
+    for (var i = 0; i < opciones.length; i++) {
+        var imgElement = document.createElement('img');
+        imgElement.className = 'boton';
+        imgElement.src = opciones[i];
+        imgElement.onclick = function() {
+            verificarRespuesta(this);
+        };
+        container.appendChild(imgElement);
+    }
+
+    // Cambiar el audio
+    if (audioElement) {
+        audioElement.pause(); // Pausar el audio actual
+        audioElement.currentTime = 0; // Reiniciar el tiempo del audio
+        audioElement.src = imagenesRespuestas[indiceActual].audio;
+        audioElement.load(); // Cargar el nuevo audio
+    }
+}
+
+// Función para mezclar el orden de un array 
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
