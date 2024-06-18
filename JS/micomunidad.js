@@ -1,93 +1,173 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cardArray = [
-        { name: 'img1', img: '../assets/FAMILIA1/hermana.jpg' },
-        { name: 'img1', img: '../assets/FAMILIA1/hermana.jpg' },
-        { name: 'img2', img: '../assets/FAMILIA1/abuelos.png' },
-        { name: 'img2', img: '../assets/FAMILIA1/abuelos.png' },
-        { name: 'img3', img: '../assets/FAMILIA1/mama.png' },
-        { name: 'img3', img: '../assets/FAMILIA1/mama.png' },
-        { name: 'img4', img: '../assets/FAMILIA1/hermano.jpeg' },
-        { name: 'img4', img: '../assets/FAMILIA1/hermano.jpeg' },
-        { name: 'img5', img: '../assets/FAMILIA1/papa3.jpeg' },
-        { name: 'img5', img: '../assets/FAMILIA1/papa3.jpeg' },
-        { name: 'img6', img: '../assets/FAMILIA1/grandmother.png' },
-        { name: 'img6', img: '../assets/FAMILIA1/grandmother.png' },
-        { name: 'img7', img: '../assets/FAMILIA1/grandfather.png' },
-        { name: 'img7', img: '../assets/FAMILIA1/grandfather.png' },
-        { name: 'img8', img: '../assets/FAMILIA1/primos.jpeg' },
-        { name: 'img8', img: '../assets/FAMILIA1/primos.jpeg' },
-        { name: 'img9', img: '../assets/FAMILIA1/FAMILIA.jpg' },
-        { name: 'img9', img: '../assets/FAMILIA1/FAMILIA.jpg' },
-        { name: 'img10', img: '../assets/FAMILIA1/tios y primos.png' },
-        { name: 'img10', img: '../assets/FAMILIA1/tios y primos.png' }
+
+    const cardsArray= [
+        { name: 'img1', img: '../assets/mi comunidad/banco.png' },
+        { name: 'img1', img: '../assets/mi comunidad/banco.png' },
+        { name: 'img2', img: '../assets/mi comunidad/tienda.png' },
+        { name: 'img2', img: '../assets/mi comunidad/tienda.png' },
+        { name: 'img3', img: '../assets/mi comunidad/elotes.png' },
+        { name: 'img3', img: '../assets/mi comunidad/elotes.png' },
+        { name: 'img4', img: '../assets/mi comunidad/Estetica.jpg' },
+        { name: 'img4', img: '../assets/mi comunidad/Estetica.jpg' },
+        { name: 'img5', img: '../assets/mi comunidad/hospital.jpeg' },
+        { name: 'img5', img: '../assets/mi comunidad/hospital.jpeg' },
+        { name: 'img6', img: '../assets/mi comunidad/kiosko.png' },
+        { name: 'img6', img: '../assets/mi comunidad/kiosko.png' },
+        { name: 'img7', img: '../assets/mi comunidad/lacosta.jpg' },
+        { name: 'img7', img: '../assets/mi comunidad/lacosta.jpg' },
+        { name: 'img8', img: '../assets/mi comunidad/mercado.jpeg' },
+        { name: 'img8', img: '../assets/mi comunidad/mercado.jpeg' },
+        { name: 'img9', img: '../assets/mi comunidad/mi comunidad.jpeg' },
+        { name: 'img9', img: '../assets/mi comunidad/mi comunidad.jpeg' },
+        { name: 'img10', img: '../assets/mi comunidad/mounntaña.png' },
+        { name: 'img10', img: '../assets/mi comunidad/mounntaña.png' }
     ];
 
-    cardArray.sort(() => 0.5 - Math.random());
-
-    const gameBoard = document.getElementById('game-board');
-    let chosenCards = [];
-    let chosenCardIds = [];
-    let cardsWon = [];
-
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+    let aciertos = 0;
+    let turnos = 0;
+    
     function createBoard() {
-        cardArray.forEach((card, index) => {
+        const gameBoard = document.getElementById('game-board');
+        cardsArray.sort(() => 0.5 - Math.random());
+    
+        cardsArray.forEach((card) => {
             const cardElement = document.createElement('div');
-            cardElement.setAttribute('class', 'card');
-            cardElement.setAttribute('data-id', index);
-            cardElement.addEventListener('click', flipCard);
-            const cardImage = document.createElement('img');
-            cardImage.setAttribute('src', card.img);
-            cardElement.appendChild(cardImage);
+            cardElement.classList.add('card');
+            cardElement.dataset.name = card.name;
+    
+            const cardFront = document.createElement('div');
+            cardFront.classList.add('card-front');
+            const imgFront = document.createElement('img');
+            imgFront.src = card.img; // Añadir la ruta de la imagen
+            cardFront.appendChild(imgFront);
+    
+            const cardBack = document.createElement('div');
+            cardBack.classList.add('card-back');
+    
+            cardElement.appendChild(cardFront);
+            cardElement.appendChild(cardBack);
             gameBoard.appendChild(cardElement);
+    
+            cardElement.addEventListener('click', flipCard);
         });
     }
-
+    
+    // Llamar a la función para crear el tablero al cargar la página
+    createBoard();
+    
+    // Iniciar el juego cuando se hace clic en el botón "Jugar"
+    $("#start-button").on("click", function() {
+        // Mostrar todas las cartas durante 10 segundos
+        showAllCards();
+        setTimeout(flipAllCards, 5000); // Voltear todas las cartas después de 10 segundos
+        $(this).hide(); // Ocultar el botón después de hacer clic en él
+    });
+    
+    // Función para manejar el clic en una carta
     function flipCard() {
-        const cardId = this.getAttribute('data-id');
-        if (chosenCardIds.includes(cardId) || cardsWon.includes(cardArray[cardId].name)) {
+        if (lockBoard) return;
+        if (this === firstCard) return;
+    
+        this.classList.add('flip');
+    
+        if (!firstCard) {
+            firstCard = this;
             return;
         }
-
-        chosenCards.push(cardArray[cardId].name);
-        chosenCardIds.push(cardId);
-        this.classList.add('flipped');
-
-        if (chosenCards.length === 2) {
-            setTimeout(checkForMatch, 500);
-        }
+    
+        secondCard = this;
+        checkForMatch();
+        turnos++; // Incrementar el contador de turnos
+        $("#turnos").text(turnos);
     }
-
+    
+    // Función para comprobar si las dos cartas son iguales
     function checkForMatch() {
-        const cards = document.querySelectorAll('.card');
-        const [optionOneId, optionTwoId] = chosenCardIds;
-
-        if (chosenCards[0] === chosenCards[1] && optionOneId !== optionTwoId) {
-            cards[optionOneId].removeEventListener('click', flipCard);
-            cards[optionTwoId].removeEventListener('click', flipCard);
-            cardsWon.push(chosenCards[0]);
+        let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+    
+        if (isMatch) {
+            disableCards(); // Si son iguales, deshabilitar las cartas
+            aciertos++; // Incrementar el contador de aciertos
+            $("#aciertos").text(aciertos);
+            checkIfGameWon(); // Comprobar si el juego ha sido ganado
         } else {
-            cards[optionOneId].classList.remove('flipped');
-            cards[optionTwoId].classList.remove('flipped');
-        }
-
-        chosenCards = [];
-        chosenCardIds = [];
-
-        if (cardsWon.length === cardArray.length / 2) {
-            // Mostrar un alert
-            Swal.fire({
-                icon: null, // Deja el icono en null
-                title: "¡ Felicidades !",
-                html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
-                    '<br><br>' +
-                    '<h2>Has terminado la actividad!</h2>', // Agrega el texto
-                showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
-                willClose: () => {
-                    window.location.href = "../1MAIN/Contenido.html"; // Reemplaza con la URL a la que quieres redirigir
-                }
-            });
+            unflipCards(); // Si no son iguales, voltear las cartas de nuevo
         }
     }
-
-    createBoard();
-});
+    
+    // Función para deshabilitar las cartas cuando son iguales
+    function disableCards() {
+        firstCard.removeEventListener('click', flipCard);
+        secondCard.removeEventListener('click', flipCard);
+    
+        resetBoard();
+    }
+    
+    // Función para voltear las cartas cuando no son iguales
+    function unflipCards() {
+        lockBoard = true;
+    
+        setTimeout(() => {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+    
+            resetBoard();
+        }, 2000);
+    }
+    
+    // Función para reiniciar el tablero después de un par de intentos
+    function resetBoard() {
+        [firstCard, secondCard, lockBoard] = [null, null, false];
+    }
+    
+    // Función para mostrar todas las cartas durante 10 segundos
+    function showAllCards() {
+        const allCards = document.querySelectorAll('.card');
+        allCards.forEach(card => card.classList.add('flip'));
+    }
+    
+    // Función para voltear todas las cartas
+    function flipAllCards() {
+        const allCards = document.querySelectorAll('.card');
+        allCards.forEach(card => card.classList.remove('flip'));
+    }
+    
+    // Función para comprobar si el juego ha sido ganado
+    function checkIfGameWon() {
+        if (aciertos === cardsArray.length / 2) {
+            setTimeout(mostrarFelicidades, 3000); // Mostrar el modal de felicitaciones después de 3 segundos
+        }
+    }
+    
+    // Función para mostrar el modal con el mensaje de felicitaciones
+    function mostrarFelicidades() {
+        $('#mensajeResultado').text('¡FELICIDADES!');
+        $('#resultadoImagen').attr('src', '../assets/feliz1.png'); // Cambia la ruta de la imagen según sea necesario
+        $('#resultadoModal').css('display', 'block');
+    }
+    
+    $(document).ready(function() {
+        // Cierra el modal al hacer clic en la "x"
+        $('.close').on('click', function() {
+            $('#resultadoModal').css('display', 'none');
+        });
+    
+        // Cierra el modal al hacer clic fuera del contenido del modal
+        $(window).on('click', function(event) {
+            if (event.target.id === 'resultadoModal') {
+                $('#resultadoModal').css('display', 'none');
+            }
+        });
+    
+        // Acción del botón "Volver a jugar"
+        $('#volverAJugar').on('click', function() {
+            location.reload(); // Recargar la página
+        });
+    
+        // Acción del botón "Salir"
+        $('#salir').on('click', function() {
+            window.location.href = "../1MAIN/Contenido.html"; // Redirigir a otra página
+        });
+    });

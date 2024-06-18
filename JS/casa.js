@@ -39,31 +39,54 @@ var imagenesRespuestas = [
         imagen: "../assets/CASA/casa (cocina)/cocina.png",
         opciones: ["../assets/CASA/actividad/salita.jpeg", "../assets/CASA/casa comedor2/silla.png", "../assets/CASA/casa (cocina)/cocina.png"],
         respuesta: "../assets/CASA/casa (cocina)/cocina.png" //SILLA
+    },
+    {
+        imagen: "../assets/CASA/puerta.png",
+        opciones: ["../assets/CASA/actividad/salita.jpeg", "../assets/CASA/casa comedor2/silla.png", "../assets/CASA/casa (cocina)/cocina.png"],
+        respuesta: "../assets/CASA/casa (cocina)/cocina.png" //puerta
     }
 ];
+
+// Mapeo entre la ruta de la imagen y la ruta del archivo de audio
+var audioMap = {
+    "../assets/CASA/actividad/baño.jpeg": "../assets/AUDIOS/ELCUERPO/cabeza1.aac",
+    "../assets/CASA/casa/casa1.png": "../assets/AUDIOS/ELCUERPO/oreja.aac",
+    "../assets/CASA/casa-recamara2/camita.png": "../assets/AUDIOS/ELCUERPO/boca.aac",
+    "../assets/CASA/casa/casa2.png": "../assets/AUDIOS/ELCUERPO/ojos.aac",
+    "../assets/CASA/casa (cocina)/cocina.png": "../assets/AUDIOS/ELCUERPO/Hombro.aac",
+    "../assets/CASA/sala_televicion/tele.png": "../assets/AUDIOS/ELCUERPO/manos.aac",
+    "../assets/CASA/casa/casa2.png": "../assets/AUDIOS/ELCUERPO/pied.aac",
+    "../assets/CASA/casa (cocina)/cocina.png": "../assets/AUDIOS/ELCUERPO/cuerpo.aac",
+    "../assets/CASA/puerta.png": "../assets/AUDIOS/ELCUERPO/piernas.aac"
+};
 
 var indiceActual = 0;
 var confettiInstance = null; // Variable global para ConfettiJS
 
+// Ruta del audio para el botón boton-audio
+var audioBotonGeneralSrc = "../assets/AUDIOS/ELCUERPO/escuha y seleccionaimg.aac";
+// Asociar el audio al botón de audio general llamado boton-audio
+var audioBotonGeneral = document.querySelector('.boton-audio');
+audioBotonGeneral.onclick = function() {
+    var audio = new Audio(audioBotonGeneralSrc);
+    audio.play();
+};
+
 // Función para verificar la respuesta cuando se hace clic en una imagen
 function verificarRespuesta(imagenClicada) {
     var imagenActual = imagenesRespuestas[indiceActual];
-    var imagenes = document.querySelectorAll('.boton');
-    
-    if (imagenClicada.src === new URL(imagenActual.respuesta, location.href).href) {
+    var isCorrect = imagenClicada.src === new URL(imagenActual.respuesta, location.href).href;
+
+    if (isCorrect) {
         // La respuesta es correcta
         imagenClicada.style.backgroundColor = "green"; // Cambiar el color del botón a verde
+        desactivarBotones();
         lanzarConfeti();
-        
-        // Deshabilitar todos los botones
-        imagenes.forEach(function (imagen) {
-            imagen.onclick = null;
-        });
     } else {
         // La respuesta es incorrecta
         imagenClicada.style.backgroundColor = "red"; // Cambiar el color del botón a rojo
         setTimeout(() => {
-            imagenClicada.style.backgroundColor = ""; // Reiniciar el color después de 1 segundo
+            imagenClicada.style.backgroundColor = ""; // Quitar el color rojo después de un momento
         }, 1000);
     }
 
@@ -74,23 +97,30 @@ function verificarRespuesta(imagenClicada) {
         setTimeout(() => {
             Swal.fire({
                 icon: null, // Deja el icono en null
-                title: "¡ Felicidades !",
+                title: "¡Felicidades!",
                 html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
                       '<br><br>' +
                       '<h2>Has terminado la actividad!</h2>', // Agrega el texto
-                showCloseButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'Volver a jugar',
-                cancelButtonText: 'Salir',
-                preConfirm: () => {
-                    window.location.reload(); // Volver a cargar la página actual
-                },
-                preDeny: () => {
-                    window.location.href = "../1MAIN/Contenido.html"; // Reemplaza con la URL a la que quieres redirigir
+                showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
+                confirmButtonText: 'OK', // El texto del botón de confirmación
+                showCancelButton: true, // Muestra un segundo botón
+                cancelButtonText: 'Repetir la actividad' // El texto del botón de cancelar
+            }).then((result) => {
+                if (result.isDismissed) {
+                    // Si se hizo clic en "Repetir la actividad"
+                    repetirActividad();
                 }
             });
         }, 1500);
     }
+}
+
+// Función para desactivar todos los botones
+function desactivarBotones() {
+    var botones = document.querySelectorAll('.boton');
+    botones.forEach(function (boton) {
+        boton.onclick = null; // Desactivar el evento onclick
+    });
 }
 
 // Función para lanzar confeti
@@ -125,19 +155,18 @@ function siguientePregunta() {
         setTimeout(() => {
             Swal.fire({
                 icon: null, // Deja el icono en null
-                title: "¡ Felicidades !",
+                title: "¡Felicidades!",
                 html: '<img src="../assets/feliz1.png" style="width: 200px;">' + // Inserta la imagen como HTML
                       '<br><br>' +
                       '<h2>Has terminado la actividad!</h2>', // Agrega el texto
-                showCloseButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'Volver a jugar',
-                cancelButtonText: 'Salir',
-                preConfirm: () => {
-                    window.location.href = "../7-LACASA/ActividadLC.html"; // Reemplaza con la URL a la que quieres redirigir
-                },
-                preDeny: () => {
-                    window.location.href = "../1MAIN/Contenido.html"; // Reemplaza con la URL a la que quieres redirigir
+                showCloseButton: true, // Muestra un botón de cerrar para que el usuario pueda cerrar el cuadro de diálogo
+                confirmButtonText: 'OK', // El texto del botón de confirmación
+                showCancelButton: true, // Muestra un segundo botón
+                cancelButtonText: 'Repetir la actividad' // El texto del botón de cancelar
+            }).then((result) => {
+                if (result.isDismissed) {
+                    // Si se hizo clic en "Repetir la actividad"
+                    repetirActividad();
                 }
             });
         }, 1500);
@@ -172,6 +201,21 @@ function cargarSiguiente() {
         };
         container.appendChild(imgElement);
     }
+
+    // Asociar el audio al botón boton-audio2
+    var audioBoton = document.querySelector('.btn-audio');
+    var imagenActual = imagenesRespuestas[indiceActual];
+    var audioSrc = audioMap[imagenActual.respuesta];
+    audioBoton.onclick = function() {
+        var audio = new Audio(audioSrc);
+        audio.play();
+    };
+}
+
+// Función para repetir la actividad
+function repetirActividad() {
+    indiceActual = 0;
+    cargarSiguiente();
 }
 
 // Cargar la primera imagen al cargar la página
