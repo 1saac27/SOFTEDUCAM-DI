@@ -1,69 +1,79 @@
+// Obtén una referencia al elemento de audio
+var audioElement = document.getElementById('audio');
+
+// Obtén una referencia al botón de reproducción de audio
+var botonReproducir = document.querySelector('.boton-audio2');
+
+// Agrega un evento de clic al botón de reproducción de audio
+botonReproducir.addEventListener('click', function() {
+    // Reproduce el audio
+    audioElement.play();
+});
+
 // Definir una lista de objetos con las imágenes, las respuestas correctas y los audios
 var imagenesRespuestas = [{
         imagen: "../assets/9-CLIMA/lluvia.png",
         respuesta: "LLuvia",
         opciones: ["Calor", "LLuvia", "Viento"], // Nuevas opciones para los botones
-        audio: "../assets/audios/lluvia_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/LLuvia.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/aire2.png",
-        respuesta: "Aire",
-        opciones: ["Lluvia", "Arcoiris", "Aire"], // Nuevas opciones para los botones
-        audio: "../assets/audios/aire_audio.mp3" // Ruta del audio relacionado con la imagen
+        respuesta: "Viento",
+        opciones: ["Lluvia", "Arcoiris", "Viento"], // Nuevas opciones para los botones
+        audio: "../../assets/AUDIOS/CLIMA/Viento.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/arcoiris2.jpg",
         respuesta: "Arcoiris",
         opciones: ["Verano", "Aire", "Arcoiris"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Arcoiris.m4a" // Ruta del audio relacionado con la imagen
     },
 
     {
         imagen: "../assets/9-CLIMA/verano4.jpeg",
         respuesta: "Verano",
         opciones: ["Verano", "LLuvia", "Primavera"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Verano.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/calor5.png",
         respuesta: "Calor",
         opciones: ["Calor", "LLuvia", "Frio"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Calor.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/estaciones.png",
         respuesta: "Clima",
         opciones: ["Calor", "Clima", "Frio"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Clima.m4a" // Ruta del audio relacionado con la imagen
     },
     {
-        imagen: "../assets/9-CLIMA/frio.png",
+        imagen: "../assets/9-CLIMA/frio.jpg",
         respuesta: "Frio",
         opciones: ["Calor", "Verano", "Frio"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Frío.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/inverno1.jpeg",
         respuesta: "Invierno",
         opciones: ["Otoño", "Invierno", "Arcoiris"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Invierno.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/otoño.jpeg",
         respuesta: "Otoño",
         opciones: ["Calor", "LLuvia", "Otoño"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Otoño.m4a" // Ruta del audio relacionado con la imagen
     },
     {
         imagen: "../assets/9-CLIMA/primavera273.jpeg",
         respuesta: "Primavera",
         opciones: ["Aire", "Primavera", "Frio"], // Nuevas opciones para los botones
-        audio: "../assets/audios/arcoris_audio.mp3" // Ruta del audio relacionado con la imagen
+        audio: "../../assets/AUDIOS/CLIMA/Primavera.m4a" // Ruta del audio relacionado con la imagen
     }
 ];
-
 var indiceActual = 0;
-var audioElement = document.getElementById('audio');
 
 // Función para cargar la siguiente imagen, configurar los botones y reproducir el audio correspondiente
 function cargarSiguiente() {
@@ -80,9 +90,8 @@ function cargarSiguiente() {
             respuestas[i].onclick = verificarRespuesta; // Asignamos la función de verificar respuesta al evento onclick
         }
 
-        // Reproducir el audio correspondiente a la imagen actual
+        // Asigna la ruta del audio correspondiente a la imagen actual
         audioElement.src = imagenesRespuestas[indiceActual].audio;
-        audioElement.play();
     } else {
         // Aquí puedes agregar algún comportamiento cuando se hayan mostrado todas las imágenes
         console.log("Has terminado la actividad.");

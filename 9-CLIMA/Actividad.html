@@ -16,14 +16,15 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio" id="play-instruction"><i class="material-icons">volume_up</i></button>
+        <button class="boton-audio" id="play-instruction" onclick="playAudio('audio300', this)"><i class="material-icons">volume_up</i></button>
         <span class="texto-destacado">Escucha y selecciona la palabra</span>
     </div>
 
+    <audio id="audio300" src="../assets/AUDIOS/CLIMA/Escucha y selecciona la palabra.aac"></audio>
+
+    <audio id="audio"></audio>
     <div class="container">
-        <button class="boton-audio2">
-            <i class="material-icons">volume_up</i>
-        </button>
+        <button class="boton-audio2"> <i class="material-icons">volume_up</i> </button>
         <img id="imagen" alt="Imagen">
         <div class="botonesF">
             <button id="boton1" class="boton"></button>
@@ -54,6 +55,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../JS/clima.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <!-- Mueve este script aquí -->
     <script>
         $(function() {

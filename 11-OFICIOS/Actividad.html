@@ -16,47 +16,70 @@
     <div id="navbar-container"></div>
 
     <div class="instruction">
-        <button class="boton-audio"><i class="material-icons">volume_up</i></button>
+        <button class="boton-audio" onclick="playAudio('audio20000', this)"><i class="material-icons">volume_up</i></button>
         <span class="texto-destacado">Arrastra los audios correspondientes a cada imagen</span>
     </div>
+
+    <!-- Audio Elements -->
+    <audio id="audio20000" src="../assets/AUDIOS/CUIDOCUERPO/Audios a cada imagen.m4a"></audio>
 
     <!-- Contenedor para los botones de audio -->
     <div id="audioContainer">
         <!-- Primera fila con texto y botón de audio -->
         <div class="audio-row">
             <div class="column">
-                <button class="boton-audio3" id="boton-audio1"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio1"><i class="material-icons">volume_up</i>
+                    <audio id="audio1" src="../assets/AUDIOS/OFICIOS/Albañil.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio2"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio2"><i class="material-icons">volume_up</i>
+                    <audio id="audio2" src="../assets/AUDIOS/OFICIOS/Arquitecto.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio3"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio3"><i class="material-icons">volume_up</i>
+                    <audio id="audio3" src="../assets/AUDIOS/OFICIOS/Bailarina.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio4"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio4"><i class="material-icons">volume_up</i>
+                    <audio id="audio4" src="../assets/AUDIOS/OFICIOS/Comerciante.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio5"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio5"><i class="material-icons">volume_up</i>
+                    <audio id="audio5" src="../assets/AUDIOS/OFICIOS/Enfermera.m4a"></audio>
+                </button>
             </div>
         </div>
 
         <!-- SEGUNDA fila con texto y botón de audio -->
         <div class="audio-row">
             <div class="column">
-                <button class="boton-audio3" id="boton-audio6"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio6"><i class="material-icons">volume_up</i>
+                    <audio id="audio6" src="../assets/AUDIOS/OFICIOS/Músico.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio7"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio7"><i class="material-icons">volume_up</i>
+                    <audio id="audio7" src="../assets/AUDIOS/OFICIOS/Policía.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio8"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio8"><i class="material-icons">volume_up</i>
+                    <audio id="audio8" src="../assets/AUDIOS/OFICIOS/Plomero.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio9"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio9"><i class="material-icons">volume_up</i>
+                    <audio id="audio9" src="../assets/AUDIOS/OFICIOS/Soldado.m4a"></audio>
+                </button>
             </div>
             <div class="column">
-                <button class="boton-audio3" id="boton-audio10"><i class="material-icons">volume_up</i></button>
+                <button class="boton-audio3" id="boton-audio10"><i class="material-icons">volume_up</i>
+                    <audio id="audio10" src="../assets/AUDIOS/OFICIOS/Zapatero.m4a"></audio>
+                </button>
             </div>
         </div>
     </div>
@@ -134,6 +157,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../JS/oficios.js"></script>
+        <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
 
         <script>
             $(function() {

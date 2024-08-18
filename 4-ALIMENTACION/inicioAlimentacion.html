@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- SCRIPT DE LLAMADA DEL NAVBAR  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/Audio/AudioCuidoCuerpo.js"></script>
     <script>
         $(function() {
             $("#navbar-container").load("../NavbarR.html");
@@ -32,11 +33,12 @@
 
         <!-- Texto lateral -->
         <div class="texto-lateral">
-            <p><button class="boton-audio"><i class="material-icons">volume_up</i></button>Bienvenido</p>
+            <p><button class="boton-audio" onclick="playAudio('audio121212', this)"><i class="material-icons">volume_up</i></button>Bienvenido</p>
             <p>Aprenderemos sobre la alimetacion</p>
             <p>Da clic al botón verde.</p>
         </div>
-
+        <!-- Audio Elements -->
+        <audio id="audio121212" src="../assets/AUDIOS/ALIMENTACION/inicio Alimentacion.aac"></audio>
     </div>
 
     <!-- Imagen debajo del texto lateral -->
