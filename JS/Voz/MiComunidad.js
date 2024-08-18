@@ -140,38 +140,38 @@ $(document).ready(function() {
 // Definir un objeto con los nombres de los archivos HTML y los audios correspondientes
 const audioMap = {
     'inicioComunidad.html': {
-        botonAudio1: '../../assets/AUDIOS/LAESCUELA/BienvenidaEsc.aac',
+        botonAudio1: '../../assets/AUDIOS/MICOMUNIDAD/inicio.aac',
     },
     '1-Parque.html': {
         botonAudio1: '../../assets/AUDIOS/LAESCUELA/ESCUCHA Y REPITE LA PALABRA.aac',
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/SALON.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/parque .aac'
     },
     '2-Tienda.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Pizarron.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/tienda .aac'
     },
     '3-Estetica.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Escritorio.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/estética .aac'
     },
     '4-Banco.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Cuaderno.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/banco.aac'
     },
     '5-Comunidad.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Maestra.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/comunidad .aac'
     },
     '6-Mercado.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Gooma.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/mercado .aac'
     },
     '7-Escuela.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Lapiz.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/escuela.aac'
     },
     '8-Monte.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Crayones.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/monte.aac'
     },
     '9-LaCosta.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Tijeras.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/la costa.aac'
     },
     '10-Hospital.html': {
-        botonAudio2: '../../assets/AUDIOS/LAESCUELA/Mochila.aac'
+        botonAudio2: '../../assets/AUDIOS/MICOMUNIDAD/Hospital .aac'
     }
     
     // Agrega más entradas según sea necesario
